@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — kkiruk studio</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #fff; color: #1a1a1a; padding: 2rem 1.25rem; }
+  .wrap { max-width: 680px; margin: 0 auto; }
+  .header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #e5e5e5; flex-wrap: wrap; gap: 12px; }
+  .header h1 { font-size: 18px; font-weight: 600; line-height: 1.4; }
+  .header p { font-size: 12px; color: #888; margin-top: 4px; }
+  .lang-btns { display: flex; gap: 8px; }
+  .lang-btns button { font-size: 12px; padding: 4px 14px; border-radius: 20px; border: 1px solid #ccc; background: transparent; color: #666; cursor: pointer; }
+  .lang-btns button.active { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+  .meta { font-size: 13px; color: #888; margin-bottom: 1.75rem; line-height: 1.7; }
+  .intro { font-size: 14px; color: #555; margin-bottom: 1.75rem; line-height: 1.7; }
+  .badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+  .badge { font-size: 12px; padding: 4px 12px; border-radius: 20px; background: #e8f0fe; color: #1a56db; border: 1px solid #c3d9fc; }
+  .section { border-left: 2px solid #e5e5e5; padding-left: 1rem; margin-bottom: 2rem; }
+  .section h2 { font-size: 15px; font-weight: 600; margin-bottom: 1rem; }
+  .section p { font-size: 14px; color: #555; line-height: 1.75; margin-bottom: 1rem; }
+  .section p:last-child { margin-bottom: 0; }
+  .section ul { font-size: 14px; color: #555; line-height: 1.75; margin-bottom: 1rem; padding-left: 1.2rem; }
+  .section li { margin-bottom: 4px; }
+  .sub-label { font-size: 13px; font-weight: 600; color: #888; margin-bottom: 6px; }
+  table { width: 100%; font-size: 13px; border-collapse: collapse; margin-bottom: 10px; }
+  td { padding: 8px 0; color: #555; border-bottom: 1px solid #f0f0f0; vertical-align: top; }
+  td:first-child { width: 42%; font-weight: 500; color: #333; }
+  tr:last-child td { border-bottom: none; }
+  .note { font-size: 12px; color: #999; margin-top: 8px; line-height: 1.6; }
+  .note a { color: #0066cc; text-decoration: none; }
+  .email { color: #0066cc; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #111; color: #e5e5e5; }
+    .header { border-color: #333; }
+    .header h1 { color: #e5e5e5; }
+    .lang-btns button { border-color: #444; color: #aaa; background: transparent; }
+    .lang-btns button.active { background: #e5e5e5; color: #111; border-color: #e5e5e5; }
+    .section { border-color: #333; }
+    .section p, .section ul, .section li, td { color: #aaa; }
+    td:first-child { color: #ccc; }
+    td { border-color: #2a2a2a; }
+    .badge { background: #1a2a4a; color: #7eb3f5; border-color: #2a4a8a; }
+    .note { color: #666; }
+    .sub-label { color: #666; }
+    .email { color: #7eb3f5; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div>
+      <p>kkiruk studio</p>
+      <h1>Terms of Service / 이용약관</h1>
+    </div>
+    <div class="lang-btns">
+      <button onclick="showLang('ko')">한국어</button>
+      <button class="active" onclick="showLang('en')">English</button>
+    </div>
+  </div>
+
+  <!-- 한국어 -->
+  <div id="lang-ko" style="display:none;">
+    <p class="meta">시행일: 2026년 3월 31일 &middot; 개발사: kkiruk studio &middot; 문의: <span class="email" id="email-ko"></span></p>
+    <p class="intro">kkiruk studio(이하 "당사")가 운영하는 아래 앱들의 이용약관입니다. 앱을 다운로드하거나 사용함으로써 본 약관에 동의하는 것으로 간주합니다.</p>
+    <div class="badges">
+      <span class="badge">Pinclip</span>
+      <span class="badge">어제보다</span>
+      <span class="badge">RunNote</span>
+    </div>
+
+    <div class="section">
+      <h2>1. 서비스 개요</h2>
+      <p class="sub-label">Pinclip</p>
+      <p>영상 북마크 및 정리 앱</p>
+      <p class="sub-label">어제보다 (Than Yesterday)</p>
+      <p>어제와 오늘의 체감 기온을 비교하는 날씨 앱</p>
+      <p class="sub-label">RunNote</p>
+      <p>러닝 기록 및 AI 코칭 앱</p>
+    </div>
+
+    <div class="section">
+      <h2>2. 서비스 이용</h2>
+      <p>각 앱은 무료 기능과 유료(Pro) 기능을 제공합니다. 무료 기능은 별도의 결제 없이 사용할 수 있으며, Pro 기능은 인앱 구매 또는 구독을 통해 이용할 수 있습니다.</p>
+    </div>
+
+    <div class="section">
+      <h2>3. 구독 및 결제</h2>
+      <p class="sub-label">구독 상품 (어제보다)</p>
+      <table>
+        <tr><td>월간 구독</td><td>$1.99/월</td></tr>
+        <tr><td>연간 구독</td><td>$14.99/년</td></tr>
+      </table>
+      <p class="sub-label">결제 조건</p>
+      <ul>
+        <li>결제는 Apple ID 계정을 통해 iTunes 계정으로 청구됩니다.</li>
+        <li>구독은 현재 기간 종료 최소 24시간 전에 해지하지 않으면 자동 갱신됩니다.</li>
+        <li>갱신 요금은 현재 기간 종료 전 24시간 이내에 청구됩니다.</li>
+        <li>구독은 구매 후 App Store 계정 설정에서 관리 및 해지할 수 있습니다.</li>
+        <li>무료 체험 기간이 제공되는 경우, 미사용분은 구독 구매 시 소멸됩니다.</li>
+      </ul>
+      <p class="sub-label">환불</p>
+      <p>환불은 Apple의 환불 정책에 따릅니다.</p>
+    </div>
+
+    <div class="section">
+      <h2>4. 위치 정보 (어제보다)</h2>
+      <p>앱은 날씨 데이터를 제공하기 위해 기기의 위치 정보를 사용합니다. 위치 정보는 서버에 저장되지 않으며, 날씨 API 요청 시에만 일시적으로 사용됩니다. 위치 접근 권한은 iOS 설정에서 언제든지 변경할 수 있습니다.</p>
+    </div>
+
+    <div class="section">
+      <h2>5. 면책 조항</h2>
+      <p>날씨 데이터는 외부 API를 통해 제공되며, 정확성을 보장하지 않습니다. 앱에서 제공하는 정보에 기반한 판단으로 발생한 손해에 대해 당사는 책임을 지지 않습니다. 앱은 "있는 그대로(AS IS)" 제공되며, 서비스 중단이나 오류에 대한 보증을 하지 않습니다.</p>
+    </div>
+
+    <div class="section">
+      <h2>6. 지적 재산권</h2>
+      <p>앱의 디자인, 코드, 콘텐츠에 대한 모든 지적 재산권은 당사에 귀속됩니다. 사용자는 개인 용도로만 앱을 사용할 수 있으며, 역설계, 복제, 배포할 수 없습니다.</p>
+    </div>
+
+    <div class="section">
+      <h2>7. 이용 제한</h2>
+      <p>다음 행위는 금지됩니다:</p>
+      <ul>
+        <li>앱의 보안을 우회하거나 무력화하는 행위</li>
+        <li>앱을 이용한 불법 활동</li>
+        <li>서비스 운영을 방해하는 행위</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>8. 약관 변경</h2>
+      <p>본 약관은 변경될 수 있으며, 변경 시 본 페이지를 통해 공지합니다. 변경 후 앱을 계속 사용하면 변경된 약관에 동의한 것으로 간주합니다.</p>
+    </div>
+
+    <div class="section">
+      <h2>9. 준거법</h2>
+      <p>본 약관은 대한민국 법률에 따라 해석 및 적용됩니다.</p>
+    </div>
+
+    <div class="section">
+      <h2>10. 문의</h2>
+      <p><span class="email" id="email-ko-contact"></span></p>
+    </div>
+  </div>
+
+  <!-- English -->
+  <div id="lang-en">
+    <p class="meta">Effective: March 31, 2026 &middot; Developer: kkiruk studio &middot; Contact: <span class="email" id="email-en"></span></p>
+    <p class="intro">These Terms of Service govern your use of the apps operated by kkiruk studio ("we"). By downloading or using our apps, you agree to these terms.</p>
+    <div class="badges">
+      <span class="badge">Pinclip</span>
+      <span class="badge">ThanYesterday</span>
+      <span class="badge">RunNote</span>
+    </div>
+
+    <div class="section">
+      <h2>1. Services</h2>
+      <p class="sub-label">Pinclip</p>
+      <p>A video bookmarking and organization app</p>
+      <p class="sub-label">ThanYesterday</p>
+      <p>A weather app that compares felt temperature between yesterday and today</p>
+      <p class="sub-label">RunNote</p>
+      <p>A running tracker with AI coaching</p>
+    </div>
+
+    <div class="section">
+      <h2>2. Use of Services</h2>
+      <p>Each app offers free features and paid (Pro) features. Free features are available without payment. Pro features are available through in-app purchases or subscriptions.</p>
+    </div>
+
+    <div class="section">
+      <h2>3. Subscriptions and Payment</h2>
+      <p class="sub-label">Subscription Plans (ThanYesterday)</p>
+      <table>
+        <tr><td>Monthly</td><td>$1.99/month</td></tr>
+        <tr><td>Yearly</td><td>$14.99/year</td></tr>
+      </table>
+      <p class="sub-label">Payment Terms</p>
+      <ul>
+        <li>Payment is charged to your iTunes account through your Apple ID.</li>
+        <li>Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period.</li>
+        <li>Renewal charges are billed within 24 hours before the end of the current period.</li>
+        <li>Subscriptions can be managed and cancelled in your App Store account settings.</li>
+        <li>Any unused portion of a free trial period is forfeited upon purchasing a subscription.</li>
+      </ul>
+      <p class="sub-label">Refunds</p>
+      <p>Refunds are subject to Apple's refund policy.</p>
+    </div>
+
+    <div class="section">
+      <h2>4. Location Data (ThanYesterday)</h2>
+      <p>The app uses your device's location to provide weather data. Location data is not stored on any server and is used only temporarily for weather API requests. Location access can be changed at any time in iOS Settings.</p>
+    </div>
+
+    <div class="section">
+      <h2>5. Disclaimer</h2>
+      <p>Weather data is provided through third-party APIs and accuracy is not guaranteed. We are not liable for any damages resulting from decisions made based on information provided by the app. The app is provided "AS IS" without warranties regarding service availability or errors.</p>
+    </div>
+
+    <div class="section">
+      <h2>6. Intellectual Property</h2>
+      <p>All intellectual property rights in the apps' design, code, and content belong to us. Users may only use the apps for personal purposes and may not reverse-engineer, copy, or distribute them.</p>
+    </div>
+
+    <div class="section">
+      <h2>7. Prohibited Use</h2>
+      <p>The following activities are prohibited:</p>
+      <ul>
+        <li>Circumventing or disabling the app's security features</li>
+        <li>Using the app for illegal activities</li>
+        <li>Interfering with service operations</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>8. Changes to Terms</h2>
+      <p>We may update these terms. Changes will be posted on this page. Continued use of the app after changes constitutes acceptance of the updated terms.</p>
+    </div>
+
+    <div class="section">
+      <h2>9. Governing Law</h2>
+      <p>These terms are governed by the laws of the Republic of Korea.</p>
+    </div>
+
+    <div class="section">
+      <h2>10. Contact</h2>
+      <p><span class="email" id="email-en-contact"></span></p>
+    </div>
+  </div>
+
+</div>
+<script>
+var u = 'kkirukstudio.help';
+var d = 'gmail.com';
+var e = u + '@' + d;
+var ids = ['email-ko','email-ko-contact','email-en','email-en-contact'];
+ids.forEach(function(id) {
+  var el = document.getElementById(id);
+  if (el) el.textContent = e;
+});
+
+function showLang(lang) {
+  document.getElementById('lang-ko').style.display = lang === 'ko' ? 'block' : 'none';
+  document.getElementById('lang-en').style.display = lang === 'en' ? 'block' : 'none';
+  document.querySelectorAll('.lang-btns button').forEach(function(btn, i) {
+    btn.classList.toggle('active', (lang === 'ko' && i === 0) || (lang === 'en' && i === 1));
+  });
+}
+</script>
+</body>
+</html>
