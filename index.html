@@ -12,18 +12,20 @@
   .header h1 { font-size: 18px; font-weight: 600; line-height: 1.4; }
   .header p { font-size: 12px; color: #888; margin-top: 4px; }
   .lang-btns { display: flex; gap: 8px; }
-  .lang-btns button { font-size: 12px; padding: 4px 14px; border-radius: 20px; border: 1px solid #ccc; background: transparent; color: #666; cursor: pointer; }
-  .lang-btns button.active { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+  .lang-btns button, .app-tabs button { font-size: 12px; padding: 4px 14px; border-radius: 20px; border: 1px solid #ccc; background: transparent; color: #666; cursor: pointer; font-family: inherit; }
+  .lang-btns button.active, .app-tabs button.active { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
   .meta { font-size: 13px; color: #888; margin-bottom: 1.75rem; line-height: 1.7; }
-  .intro { font-size: 14px; color: #555; margin-bottom: 1.75rem; line-height: 1.7; }
-  .badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
-  .badge { font-size: 12px; padding: 4px 12px; border-radius: 20px; background: #e8f0fe; color: #1a56db; border: 1px solid #c3d9fc; }
+  .intro { font-size: 14px; color: #555; margin-bottom: 1.5rem; line-height: 1.7; }
+  .tab-label { font-size: 11px; color: #999; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
+  .app-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
   .section { border-left: 2px solid #e5e5e5; padding-left: 1rem; margin-bottom: 2rem; }
   .section h2 { font-size: 15px; font-weight: 600; margin-bottom: 1rem; }
   .section p { font-size: 14px; color: #555; line-height: 1.75; margin-bottom: 1rem; }
   .section p:last-child { margin-bottom: 0; }
   .section ul { font-size: 14px; color: #555; line-height: 1.75; margin-bottom: 1rem; padding-left: 1.2rem; }
   .section li { margin-bottom: 4px; }
+  .app-block { margin-bottom: 1rem; }
+  .app-block:last-child { margin-bottom: 0; }
   .sub-label { font-size: 13px; font-weight: 600; color: #888; margin-bottom: 6px; }
   table { width: 100%; font-size: 13px; border-collapse: collapse; margin-bottom: 10px; }
   td { padding: 8px 0; color: #555; border-bottom: 1px solid #f0f0f0; vertical-align: top; }
@@ -36,15 +38,15 @@
     body { background: #111; color: #e5e5e5; }
     .header { border-color: #333; }
     .header h1 { color: #e5e5e5; }
-    .lang-btns button { border-color: #444; color: #aaa; background: transparent; }
-    .lang-btns button.active { background: #e5e5e5; color: #111; border-color: #e5e5e5; }
+    .lang-btns button, .app-tabs button { border-color: #444; color: #aaa; background: transparent; }
+    .lang-btns button.active, .app-tabs button.active { background: #e5e5e5; color: #111; border-color: #e5e5e5; }
     .section { border-color: #333; }
     .section p, .section ul, .section li, td { color: #aaa; }
     td:first-child { color: #ccc; }
     td { border-color: #2a2a2a; }
-    .badge { background: #1a2a4a; color: #7eb3f5; border-color: #2a4a8a; }
     .note { color: #666; }
     .sub-label { color: #666; }
+    .tab-label { color: #666; }
     .email { color: #7eb3f5; }
   }
 </style>
@@ -67,46 +69,62 @@
   <div id="lang-ko" style="display:none;">
     <p class="meta">시행일: 2026년 4월 16일 &middot; 개발사: kkiruk studio &middot; 문의: <span class="email" id="email-ko"></span></p>
     <p class="intro">kkiruk studio(이하 "당사")가 운영하는 아래 앱들의 이용약관입니다. 앱을 다운로드하거나 사용함으로써 본 약관에 동의하는 것으로 간주합니다.</p>
-    <div class="badges">
-      <span class="badge">Pinclip</span>
-      <span class="badge">어제보다</span>
-      <span class="badge">RunNote</span>
-      <span class="badge">Sidefeed</span>
-      <span class="badge">Talk Memo</span>
+    <p class="tab-label">앱별로 보기</p>
+    <div class="app-tabs">
+      <button class="active" data-filter="all" onclick="filterApp('all')">전체</button>
+      <button data-filter="pinclip" onclick="filterApp('pinclip')">Pinclip</button>
+      <button data-filter="thanyesterday" onclick="filterApp('thanyesterday')">어제보다</button>
+      <button data-filter="runnote" onclick="filterApp('runnote')">RunNote</button>
+      <button data-filter="sidefeed" onclick="filterApp('sidefeed')">Sidefeed</button>
+      <button data-filter="talkmemo" onclick="filterApp('talkmemo')">Talk Memo</button>
     </div>
 
-    <div class="section">
-      <h2>1. 서비스 개요</h2>
-      <p class="sub-label">Pinclip</p>
-      <p>영상 북마크 및 정리 앱</p>
-      <p class="sub-label">어제보다 (Than Yesterday)</p>
-      <p>어제와 오늘의 체감 기온을 비교하는 날씨 앱</p>
-      <p class="sub-label">RunNote</p>
-      <p>러닝 기록 및 AI 코칭 앱</p>
-      <p class="sub-label">Sidefeed</p>
-      <p>YouTube 관심 카테고리 기반 영상 발견 및 국가별 트렌딩 앱</p>
-      <p class="sub-label">Talk Memo</p>
-      <p>Apple Watch에서 음성을 녹음하고 iPhone에서 자동으로 텍스트 메모로 변환하는 보이스 메모 앱</p>
+    <div class="section" data-app="all">
+      <h2>서비스 개요</h2>
+      <div class="app-block" data-app="pinclip">
+        <p class="sub-label">Pinclip</p>
+        <p>영상 북마크 및 정리 앱</p>
+      </div>
+      <div class="app-block" data-app="thanyesterday">
+        <p class="sub-label">어제보다 (Than Yesterday)</p>
+        <p>어제와 오늘의 체감 기온을 비교하는 날씨 앱</p>
+      </div>
+      <div class="app-block" data-app="runnote">
+        <p class="sub-label">RunNote</p>
+        <p>러닝 기록 및 AI 코칭 앱</p>
+      </div>
+      <div class="app-block" data-app="sidefeed">
+        <p class="sub-label">Sidefeed</p>
+        <p>YouTube 관심 카테고리 기반 영상 발견 및 국가별 트렌딩 앱</p>
+      </div>
+      <div class="app-block" data-app="talkmemo">
+        <p class="sub-label">Talk Memo</p>
+        <p>Apple Watch에서 음성을 녹음하고 iPhone에서 자동으로 텍스트 메모로 변환하는 보이스 메모 앱</p>
+      </div>
     </div>
 
-    <div class="section">
-      <h2>2. 서비스 이용</h2>
+    <div class="section" data-app="all">
+      <h2>서비스 이용</h2>
       <p>각 앱은 무료 기능과 유료(Pro) 기능을 제공합니다. 무료 기능은 별도의 결제 없이 사용할 수 있으며, Pro 기능은 인앱 구매 또는 구독을 통해 이용할 수 있습니다.</p>
     </div>
 
-    <div class="section">
-      <h2>3. 구독 및 결제</h2>
-      <p class="sub-label">구독 상품 (어제보다)</p>
-      <table>
-        <tr><td>월간 구독</td><td>$1.99/월</td></tr>
-        <tr><td>연간 구독</td><td>$14.99/년</td></tr>
-      </table>
-      <p class="sub-label">구독 상품 (Pinclip Pro)</p>
-      <table>
-        <tr><td>월간 구독</td><td>$2.99/월</td></tr>
-        <tr><td>연간 구독</td><td>$24.99/년</td></tr>
-      </table>
-      <p class="note">Pro 혜택: 무제한 폴더, 무제한 저장, iCloud 동기화, 홈 화면 위젯. 과거 판매된 Pinclip 평생이용권(Lifetime)은 해당 구매자에 한해 계속 유효합니다.</p>
+    <div class="section" data-app="pinclip thanyesterday">
+      <h2>구독 및 결제</h2>
+      <div class="app-block" data-app="thanyesterday">
+        <p class="sub-label">구독 상품 (어제보다)</p>
+        <table>
+          <tr><td>월간 구독</td><td>$1.99/월</td></tr>
+          <tr><td>연간 구독</td><td>$14.99/년</td></tr>
+        </table>
+      </div>
+      <div class="app-block" data-app="pinclip">
+        <p class="sub-label">구독 상품 (Pinclip Pro)</p>
+        <table>
+          <tr><td>월간 구독</td><td>$2.99/월</td></tr>
+          <tr><td>연간 구독</td><td>$24.99/년</td></tr>
+        </table>
+        <p class="note">Pro 혜택: 무제한 폴더, 무제한 저장, iCloud 동기화, 홈 화면 위젯. 과거 판매된 Pinclip 평생이용권(Lifetime)은 해당 구매자에 한해 계속 유효합니다.</p>
+      </div>
       <p class="note">표시 가격은 기준 가격이며, 실제 결제 금액은 App Store에서 사용자의 지역 및 통화에 따라 표시되는 금액을 따릅니다.</p>
       <p class="sub-label">결제 조건</p>
       <ul>
@@ -123,8 +141,8 @@
       <p>구독이 만료되거나 해지되면 Pro 기능(무제한 폴더·저장, iCloud 동기화, 위젯 등) 이용이 중단됩니다. 이미 저장된 데이터는 유지되지만, 무료 플랜의 한도를 초과하는 범위에서는 새로운 생성·수정이 제한될 수 있습니다.</p>
     </div>
 
-    <div class="section">
-      <h2>4. Pinclip 데이터 처리</h2>
+    <div class="section" data-app="pinclip">
+      <h2>Pinclip 데이터 처리</h2>
       <p class="sub-label">URL 공유 및 메타데이터 수집</p>
       <p>사용자가 iOS 공유 시트를 통해 Pinclip으로 URL을 전달하면, 앱은 해당 URL의 오픈그래프(OGP)/oEmbed 메타데이터(제목, 썸네일 이미지 URL 등)를 가져와 사용자의 기기에 저장합니다. 해당 요청은 원본 웹사이트(YouTube, TikTok 등) 또는 각 플랫폼의 공개 API로 직접 전송되며, 당사의 서버를 경유하지 않습니다.</p>
       <p>사용자는 저장된 URL, 제목, 썸네일, 메모, 태그, 폴더 정보를 언제든지 수정 또는 삭제할 수 있습니다. 사용자는 저장하는 콘텐츠에 대한 법적 책임을 지며, 불법 콘텐츠 또는 제3자의 저작권·초상권·프라이버시 등을 침해하는 콘텐츠의 저장·공유 용도로 앱을 사용해서는 안 됩니다.</p>
@@ -133,36 +151,36 @@
       <p>무료 플랜에서는 기기 내 로컬 저장소에만 데이터가 저장되며, 기기 간 동기화가 이루어지지 않습니다. iCloud 로그인 상태, 저장 공간, 네트워크 환경에 따라 동기화가 지연되거나 실패할 수 있으며, 이에 대한 구체적인 정책은 Apple의 iCloud 약관을 따릅니다.</p>
     </div>
 
-    <div class="section">
-      <h2>5. 위치 정보 (어제보다)</h2>
+    <div class="section" data-app="thanyesterday">
+      <h2>위치 정보 (어제보다)</h2>
       <p>앱은 날씨 데이터를 제공하기 위해 기기의 위치 정보를 사용합니다. 위치 정보는 서버에 저장되지 않으며, 날씨 API 요청 시에만 일시적으로 사용됩니다. 위치 접근 권한은 iOS 설정에서 언제든지 변경할 수 있습니다.</p>
     </div>
 
-    <div class="section">
-      <h2>6. YouTube API 이용 (Sidefeed)</h2>
+    <div class="section" data-app="sidefeed">
+      <h2>YouTube API 이용 (Sidefeed)</h2>
       <p>Sidefeed는 YouTube Data API v3를 사용합니다. Google OAuth 로그인을 통해 사용자의 좋아요 영상 및 구독 채널 정보에 접근합니다. 이 데이터는 관심 카테고리 분석에만 사용되며, 당사 서버에 저장되지 않습니다.</p>
       <p>Sidefeed의 YouTube API 사용은 <a href="https://www.youtube.com/t/terms" target="_blank" class="email">YouTube 서비스 약관</a> 및 <a href="https://policies.google.com/privacy" target="_blank" class="email">Google 개인정보 보호방침</a>의 적용을 받습니다.</p>
       <p>YouTube API 일일 할당량 제한에 따라 새로고침 횟수가 하루 10회로 제한됩니다.</p>
     </div>
 
-    <div class="section">
-      <h2>7. 음성 녹음 및 인식 (Talk Memo)</h2>
+    <div class="section" data-app="talkmemo">
+      <h2>음성 녹음 및 인식 (Talk Memo)</h2>
       <p>Talk Memo는 Apple Watch 마이크를 통해 음성을 녹음하고, iPhone의 온디바이스 음성 인식(Apple Speech Recognition)을 사용하여 텍스트로 변환합니다. 녹음 및 변환된 텍스트는 기기 내에만 저장되며, 외부 서버로 전송되지 않습니다. 음성 인식의 정확성은 보장되지 않습니다.</p>
       <p>사용자는 녹음 내용에 대한 법적 책임을 가지며, 제3자의 동의 없이 대화를 녹음하여 저장하는 등 관련 법령에 위반되는 용도로 사용해서는 안 됩니다.</p>
     </div>
 
-    <div class="section">
-      <h2>8. 면책 조항</h2>
-      <p>날씨 데이터는 외부 API를 통해 제공되며, 정확성을 보장하지 않습니다. 앱에서 제공하는 정보에 기반한 판단으로 발생한 손해에 대해 당사는 책임을 지지 않습니다. 앱은 "있는 그대로(AS IS)" 제공되며, 서비스 중단이나 오류에 대한 보증을 하지 않습니다.</p>
+    <div class="section" data-app="all">
+      <h2>면책 조항</h2>
+      <p>날씨 데이터, 영상 메타데이터 등은 외부 API를 통해 제공되며, 정확성을 보장하지 않습니다. 앱에서 제공하는 정보에 기반한 판단으로 발생한 손해에 대해 당사는 책임을 지지 않습니다. 앱은 "있는 그대로(AS IS)" 제공되며, 서비스 중단이나 오류에 대한 보증을 하지 않습니다.</p>
     </div>
 
-    <div class="section">
-      <h2>9. 지적 재산권</h2>
+    <div class="section" data-app="all">
+      <h2>지적 재산권</h2>
       <p>앱의 디자인, 코드, 콘텐츠에 대한 모든 지적 재산권은 당사에 귀속됩니다. 사용자는 개인 용도로만 앱을 사용할 수 있으며, 역설계, 복제, 배포할 수 없습니다.</p>
     </div>
 
-    <div class="section">
-      <h2>10. 이용 제한</h2>
+    <div class="section" data-app="all">
+      <h2>이용 제한</h2>
       <p>다음 행위는 금지됩니다:</p>
       <ul>
         <li>앱의 보안을 우회하거나 무력화하는 행위</li>
@@ -171,18 +189,18 @@
       </ul>
     </div>
 
-    <div class="section">
-      <h2>11. 약관 변경</h2>
+    <div class="section" data-app="all">
+      <h2>약관 변경</h2>
       <p>본 약관은 변경될 수 있으며, 변경 시 본 페이지를 통해 공지합니다. 변경 후 앱을 계속 사용하면 변경된 약관에 동의한 것으로 간주합니다.</p>
     </div>
 
-    <div class="section">
-      <h2>12. 준거법</h2>
+    <div class="section" data-app="all">
+      <h2>준거법</h2>
       <p>본 약관은 대한민국 법률에 따라 해석 및 적용됩니다.</p>
     </div>
 
-    <div class="section">
-      <h2>13. 문의</h2>
+    <div class="section" data-app="all">
+      <h2>문의</h2>
       <p><span class="email" id="email-ko-contact"></span></p>
     </div>
   </div>
@@ -191,46 +209,62 @@
   <div id="lang-en">
     <p class="meta">Effective: April 16, 2026 &middot; Developer: kkiruk studio &middot; Contact: <span class="email" id="email-en"></span></p>
     <p class="intro">These Terms of Service govern your use of the apps operated by kkiruk studio ("we"). By downloading or using our apps, you agree to these terms.</p>
-    <div class="badges">
-      <span class="badge">Pinclip</span>
-      <span class="badge">ThanYesterday</span>
-      <span class="badge">RunNote</span>
-      <span class="badge">Sidefeed</span>
-      <span class="badge">Talk Memo</span>
+    <p class="tab-label">Filter by app</p>
+    <div class="app-tabs">
+      <button class="active" data-filter="all" onclick="filterApp('all')">All</button>
+      <button data-filter="pinclip" onclick="filterApp('pinclip')">Pinclip</button>
+      <button data-filter="thanyesterday" onclick="filterApp('thanyesterday')">ThanYesterday</button>
+      <button data-filter="runnote" onclick="filterApp('runnote')">RunNote</button>
+      <button data-filter="sidefeed" onclick="filterApp('sidefeed')">Sidefeed</button>
+      <button data-filter="talkmemo" onclick="filterApp('talkmemo')">Talk Memo</button>
     </div>
 
-    <div class="section">
-      <h2>1. Services</h2>
-      <p class="sub-label">Pinclip</p>
-      <p>A video bookmarking and organization app</p>
-      <p class="sub-label">ThanYesterday</p>
-      <p>A weather app that compares felt temperature between yesterday and today</p>
-      <p class="sub-label">RunNote</p>
-      <p>A running tracker with AI coaching</p>
-      <p class="sub-label">Sidefeed</p>
-      <p>A YouTube video discovery app based on interest categories and country-specific trending</p>
-      <p class="sub-label">Talk Memo</p>
-      <p>A voice memo app that records audio on Apple Watch and automatically converts it to text memos on iPhone</p>
+    <div class="section" data-app="all">
+      <h2>Services</h2>
+      <div class="app-block" data-app="pinclip">
+        <p class="sub-label">Pinclip</p>
+        <p>A video bookmarking and organization app</p>
+      </div>
+      <div class="app-block" data-app="thanyesterday">
+        <p class="sub-label">ThanYesterday</p>
+        <p>A weather app that compares felt temperature between yesterday and today</p>
+      </div>
+      <div class="app-block" data-app="runnote">
+        <p class="sub-label">RunNote</p>
+        <p>A running tracker with AI coaching</p>
+      </div>
+      <div class="app-block" data-app="sidefeed">
+        <p class="sub-label">Sidefeed</p>
+        <p>A YouTube video discovery app based on interest categories and country-specific trending</p>
+      </div>
+      <div class="app-block" data-app="talkmemo">
+        <p class="sub-label">Talk Memo</p>
+        <p>A voice memo app that records audio on Apple Watch and automatically converts it to text memos on iPhone</p>
+      </div>
     </div>
 
-    <div class="section">
-      <h2>2. Use of Services</h2>
+    <div class="section" data-app="all">
+      <h2>Use of Services</h2>
       <p>Each app offers free features and paid (Pro) features. Free features are available without payment. Pro features are available through in-app purchases or subscriptions.</p>
     </div>
 
-    <div class="section">
-      <h2>3. Subscriptions and Payment</h2>
-      <p class="sub-label">Subscription Plans (ThanYesterday)</p>
-      <table>
-        <tr><td>Monthly</td><td>$1.99/month</td></tr>
-        <tr><td>Yearly</td><td>$14.99/year</td></tr>
-      </table>
-      <p class="sub-label">Subscription Plans (Pinclip Pro)</p>
-      <table>
-        <tr><td>Monthly</td><td>$2.99/month</td></tr>
-        <tr><td>Yearly</td><td>$24.99/year</td></tr>
-      </table>
-      <p class="note">Pro benefits: unlimited folders, unlimited saves, iCloud sync, and home screen widgets. Previously purchased Pinclip lifetime unlocks remain valid for those buyers.</p>
+    <div class="section" data-app="pinclip thanyesterday">
+      <h2>Subscriptions and Payment</h2>
+      <div class="app-block" data-app="thanyesterday">
+        <p class="sub-label">Subscription Plans (ThanYesterday)</p>
+        <table>
+          <tr><td>Monthly</td><td>$1.99/month</td></tr>
+          <tr><td>Yearly</td><td>$14.99/year</td></tr>
+        </table>
+      </div>
+      <div class="app-block" data-app="pinclip">
+        <p class="sub-label">Subscription Plans (Pinclip Pro)</p>
+        <table>
+          <tr><td>Monthly</td><td>$2.99/month</td></tr>
+          <tr><td>Yearly</td><td>$24.99/year</td></tr>
+        </table>
+        <p class="note">Pro benefits: unlimited folders, unlimited saves, iCloud sync, and home screen widgets. Previously purchased Pinclip lifetime unlocks remain valid for those buyers.</p>
+      </div>
       <p class="note">Listed prices are reference prices. The actual amount charged follows the price displayed in the App Store for your region and currency.</p>
       <p class="sub-label">Payment Terms</p>
       <ul>
@@ -247,8 +281,8 @@
       <p>When a subscription expires or is cancelled, access to Pro features (unlimited folders/saves, iCloud sync, widgets, etc.) ends. Existing saved data remains intact, but creating or modifying items beyond the free plan's limits may be restricted.</p>
     </div>
 
-    <div class="section">
-      <h2>4. Pinclip Data Handling</h2>
+    <div class="section" data-app="pinclip">
+      <h2>Pinclip Data Handling</h2>
       <p class="sub-label">URL Sharing and Metadata Fetching</p>
       <p>When you share a URL to Pinclip through the iOS share sheet, the app fetches Open Graph (OGP) / oEmbed metadata for that URL — such as the title and thumbnail image URL — and stores it on your device. These requests are sent directly to the origin website (YouTube, TikTok, etc.) or to the respective platform's public API; they do not pass through our servers.</p>
       <p>You can edit or delete saved URLs, titles, thumbnails, notes, tags, and folder data at any time. You are responsible for the content you save. The app must not be used to store or share unlawful content, or content that infringes the copyright, privacy, or other rights of third parties.</p>
@@ -257,36 +291,36 @@
       <p>On the free plan, data is stored only in local device storage and is not synced across devices. Sync may be delayed or fail depending on your iCloud sign-in status, available storage, and network conditions; the specifics are governed by Apple's iCloud terms.</p>
     </div>
 
-    <div class="section">
-      <h2>5. Location Data (ThanYesterday)</h2>
+    <div class="section" data-app="thanyesterday">
+      <h2>Location Data (ThanYesterday)</h2>
       <p>The app uses your device's location to provide weather data. Location data is not stored on any server and is used only temporarily for weather API requests. Location access can be changed at any time in iOS Settings.</p>
     </div>
 
-    <div class="section">
-      <h2>6. YouTube API Usage (Sidefeed)</h2>
+    <div class="section" data-app="sidefeed">
+      <h2>YouTube API Usage (Sidefeed)</h2>
       <p>Sidefeed uses the YouTube Data API v3. Through Google OAuth sign-in, it accesses your liked videos and subscription data. This data is used solely for interest category analysis and is not stored on our servers.</p>
       <p>Sidefeed's use of the YouTube API is subject to the <a href="https://www.youtube.com/t/terms" target="_blank" class="email">YouTube Terms of Service</a> and <a href="https://policies.google.com/privacy" target="_blank" class="email">Google Privacy Policy</a>.</p>
       <p>Due to YouTube API daily quota limits, refreshes are limited to 10 per day.</p>
     </div>
 
-    <div class="section">
-      <h2>7. Voice Recording and Recognition (Talk Memo)</h2>
+    <div class="section" data-app="talkmemo">
+      <h2>Voice Recording and Recognition (Talk Memo)</h2>
       <p>Talk Memo records audio via the Apple Watch microphone and uses on-device speech recognition (Apple Speech Recognition) on iPhone to convert recordings to text. All recordings and transcribed text are stored on-device only and are never transmitted to external servers. Accuracy of speech recognition is not guaranteed.</p>
       <p>Users are responsible for the content of their recordings. Using the app to record conversations without the consent of all parties involved, or any other use that violates applicable laws, is prohibited.</p>
     </div>
 
-    <div class="section">
-      <h2>8. Disclaimer</h2>
-      <p>Weather data and video information are provided through third-party APIs and accuracy is not guaranteed. We are not liable for any damages resulting from decisions made based on information provided by the apps. The apps are provided "AS IS" without warranties regarding service availability or errors.</p>
+    <div class="section" data-app="all">
+      <h2>Disclaimer</h2>
+      <p>Weather data, video metadata, and similar information are provided through third-party APIs and accuracy is not guaranteed. We are not liable for any damages resulting from decisions made based on information provided by the apps. The apps are provided "AS IS" without warranties regarding service availability or errors.</p>
     </div>
 
-    <div class="section">
-      <h2>9. Intellectual Property</h2>
+    <div class="section" data-app="all">
+      <h2>Intellectual Property</h2>
       <p>All intellectual property rights in the apps' design, code, and content belong to us. Users may only use the apps for personal purposes and may not reverse-engineer, copy, or distribute them.</p>
     </div>
 
-    <div class="section">
-      <h2>10. Prohibited Use</h2>
+    <div class="section" data-app="all">
+      <h2>Prohibited Use</h2>
       <p>The following activities are prohibited:</p>
       <ul>
         <li>Circumventing or disabling the app's security features</li>
@@ -295,18 +329,18 @@
       </ul>
     </div>
 
-    <div class="section">
-      <h2>11. Changes to Terms</h2>
+    <div class="section" data-app="all">
+      <h2>Changes to Terms</h2>
       <p>We may update these terms. Changes will be posted on this page. Continued use of the app after changes constitutes acceptance of the updated terms.</p>
     </div>
 
-    <div class="section">
-      <h2>12. Governing Law</h2>
+    <div class="section" data-app="all">
+      <h2>Governing Law</h2>
       <p>These terms are governed by the laws of the Republic of Korea.</p>
     </div>
 
-    <div class="section">
-      <h2>13. Contact</h2>
+    <div class="section" data-app="all">
+      <h2>Contact</h2>
       <p><span class="email" id="email-en-contact"></span></p>
     </div>
   </div>
@@ -327,6 +361,17 @@ function showLang(lang) {
   document.getElementById('lang-en').style.display = lang === 'en' ? 'block' : 'none';
   document.querySelectorAll('.lang-btns button').forEach(function(btn, i) {
     btn.classList.toggle('active', (lang === 'ko' && i === 0) || (lang === 'en' && i === 1));
+  });
+}
+
+function filterApp(app) {
+  document.querySelectorAll('[data-app]').forEach(function(el) {
+    var apps = el.getAttribute('data-app').split(' ');
+    var show = app === 'all' || apps.indexOf('all') !== -1 || apps.indexOf(app) !== -1;
+    el.style.display = show ? '' : 'none';
+  });
+  document.querySelectorAll('.app-tabs button').forEach(function(btn) {
+    btn.classList.toggle('active', btn.dataset.filter === app);
   });
 }
 </script>
