@@ -101,48 +101,68 @@
         <tr><td>월간 구독</td><td>$1.99/월</td></tr>
         <tr><td>연간 구독</td><td>$14.99/년</td></tr>
       </table>
+      <p class="sub-label">구독 상품 (Pinclip Pro)</p>
+      <table>
+        <tr><td>월간 구독</td><td>$2.99/월</td></tr>
+        <tr><td>연간 구독</td><td>$24.99/년</td></tr>
+      </table>
+      <p class="note">Pro 혜택: 무제한 폴더, 무제한 저장, iCloud 동기화, 홈 화면 위젯. 과거 판매된 Pinclip 평생이용권(Lifetime)은 해당 구매자에 한해 계속 유효합니다.</p>
+      <p class="note">표시 가격은 기준 가격이며, 실제 결제 금액은 App Store에서 사용자의 지역 및 통화에 따라 표시되는 금액을 따릅니다.</p>
       <p class="sub-label">결제 조건</p>
       <ul>
         <li>결제는 Apple ID 계정을 통해 iTunes 계정으로 청구됩니다.</li>
         <li>구독은 현재 기간 종료 최소 24시간 전에 해지하지 않으면 자동 갱신됩니다.</li>
         <li>갱신 요금은 현재 기간 종료 전 24시간 이내에 청구됩니다.</li>
-        <li>구독은 구매 후 App Store 계정 설정에서 관리 및 해지할 수 있습니다.</li>
+        <li>구독은 구매 후 App Store 계정 설정에서 관리 및 해지할 수 있으며, 해지 시 현재 기간 종료 시점까지 Pro 기능이 유지됩니다.</li>
+        <li>다른 기기에서 이미 구매한 구독은 앱 내 "구매 복원" 기능으로 복원할 수 있습니다.</li>
         <li>무료 체험 기간이 제공되는 경우, 미사용분은 구독 구매 시 소멸됩니다.</li>
       </ul>
       <p class="sub-label">환불</p>
-      <p>환불은 Apple의 환불 정책에 따릅니다.</p>
+      <p>환불은 Apple의 환불 정책에 따르며, 환불 요청은 Apple에 직접 제출해야 합니다(<a href="https://reportaproblem.apple.com" target="_blank" class="email">reportaproblem.apple.com</a>).</p>
+      <p class="sub-label">구독 해지 시 Pro 기능 제한</p>
+      <p>구독이 만료되거나 해지되면 Pro 기능(무제한 폴더·저장, iCloud 동기화, 위젯 등) 이용이 중단됩니다. 이미 저장된 데이터는 유지되지만, 무료 플랜의 한도를 초과하는 범위에서는 새로운 생성·수정이 제한될 수 있습니다.</p>
     </div>
 
     <div class="section">
-      <h2>4. 위치 정보 (어제보다)</h2>
+      <h2>4. Pinclip 데이터 처리</h2>
+      <p class="sub-label">URL 공유 및 메타데이터 수집</p>
+      <p>사용자가 iOS 공유 시트를 통해 Pinclip으로 URL을 전달하면, 앱은 해당 URL의 오픈그래프(OGP)/oEmbed 메타데이터(제목, 썸네일 이미지 URL 등)를 가져와 사용자의 기기에 저장합니다. 해당 요청은 원본 웹사이트(YouTube, TikTok 등) 또는 각 플랫폼의 공개 API로 직접 전송되며, 당사의 서버를 경유하지 않습니다.</p>
+      <p>사용자는 저장된 URL, 제목, 썸네일, 메모, 태그, 폴더 정보를 언제든지 수정 또는 삭제할 수 있습니다. 사용자는 저장하는 콘텐츠에 대한 법적 책임을 지며, 불법 콘텐츠 또는 제3자의 저작권·초상권·프라이버시 등을 침해하는 콘텐츠의 저장·공유 용도로 앱을 사용해서는 안 됩니다.</p>
+      <p class="sub-label">iCloud 동기화</p>
+      <p>Pro 구독자의 저장 데이터(폴더, 클립, 썸네일, 메모, 태그)는 사용자의 Apple iCloud 계정 내 private CloudKit 데이터베이스에 저장 및 동기화됩니다. 해당 데이터는 Apple의 인프라에서 암호화되어 전송·저장되며, 당사는 이에 접근할 수 없고 당사 서버로 전송되지 않습니다.</p>
+      <p>무료 플랜에서는 기기 내 로컬 저장소에만 데이터가 저장되며, 기기 간 동기화가 이루어지지 않습니다. iCloud 로그인 상태, 저장 공간, 네트워크 환경에 따라 동기화가 지연되거나 실패할 수 있으며, 이에 대한 구체적인 정책은 Apple의 iCloud 약관을 따릅니다.</p>
+    </div>
+
+    <div class="section">
+      <h2>5. 위치 정보 (어제보다)</h2>
       <p>앱은 날씨 데이터를 제공하기 위해 기기의 위치 정보를 사용합니다. 위치 정보는 서버에 저장되지 않으며, 날씨 API 요청 시에만 일시적으로 사용됩니다. 위치 접근 권한은 iOS 설정에서 언제든지 변경할 수 있습니다.</p>
     </div>
 
     <div class="section">
-      <h2>5. YouTube API 이용 (Sidefeed)</h2>
+      <h2>6. YouTube API 이용 (Sidefeed)</h2>
       <p>Sidefeed는 YouTube Data API v3를 사용합니다. Google OAuth 로그인을 통해 사용자의 좋아요 영상 및 구독 채널 정보에 접근합니다. 이 데이터는 관심 카테고리 분석에만 사용되며, 당사 서버에 저장되지 않습니다.</p>
       <p>Sidefeed의 YouTube API 사용은 <a href="https://www.youtube.com/t/terms" target="_blank" class="email">YouTube 서비스 약관</a> 및 <a href="https://policies.google.com/privacy" target="_blank" class="email">Google 개인정보 보호방침</a>의 적용을 받습니다.</p>
       <p>YouTube API 일일 할당량 제한에 따라 새로고침 횟수가 하루 10회로 제한됩니다.</p>
     </div>
 
     <div class="section">
-      <h2>6. 음성 녹음 및 인식 (Talk Memo)</h2>
+      <h2>7. 음성 녹음 및 인식 (Talk Memo)</h2>
       <p>Talk Memo는 Apple Watch 마이크를 통해 음성을 녹음하고, iPhone의 온디바이스 음성 인식(Apple Speech Recognition)을 사용하여 텍스트로 변환합니다. 녹음 및 변환된 텍스트는 기기 내에만 저장되며, 외부 서버로 전송되지 않습니다. 음성 인식의 정확성은 보장되지 않습니다.</p>
       <p>사용자는 녹음 내용에 대한 법적 책임을 가지며, 제3자의 동의 없이 대화를 녹음하여 저장하는 등 관련 법령에 위반되는 용도로 사용해서는 안 됩니다.</p>
     </div>
 
     <div class="section">
-      <h2>7. 면책 조항</h2>
+      <h2>8. 면책 조항</h2>
       <p>날씨 데이터는 외부 API를 통해 제공되며, 정확성을 보장하지 않습니다. 앱에서 제공하는 정보에 기반한 판단으로 발생한 손해에 대해 당사는 책임을 지지 않습니다. 앱은 "있는 그대로(AS IS)" 제공되며, 서비스 중단이나 오류에 대한 보증을 하지 않습니다.</p>
     </div>
 
     <div class="section">
-      <h2>8. 지적 재산권</h2>
+      <h2>9. 지적 재산권</h2>
       <p>앱의 디자인, 코드, 콘텐츠에 대한 모든 지적 재산권은 당사에 귀속됩니다. 사용자는 개인 용도로만 앱을 사용할 수 있으며, 역설계, 복제, 배포할 수 없습니다.</p>
     </div>
 
     <div class="section">
-      <h2>9. 이용 제한</h2>
+      <h2>10. 이용 제한</h2>
       <p>다음 행위는 금지됩니다:</p>
       <ul>
         <li>앱의 보안을 우회하거나 무력화하는 행위</li>
@@ -152,17 +172,17 @@
     </div>
 
     <div class="section">
-      <h2>10. 약관 변경</h2>
+      <h2>11. 약관 변경</h2>
       <p>본 약관은 변경될 수 있으며, 변경 시 본 페이지를 통해 공지합니다. 변경 후 앱을 계속 사용하면 변경된 약관에 동의한 것으로 간주합니다.</p>
     </div>
 
     <div class="section">
-      <h2>11. 준거법</h2>
+      <h2>12. 준거법</h2>
       <p>본 약관은 대한민국 법률에 따라 해석 및 적용됩니다.</p>
     </div>
 
     <div class="section">
-      <h2>12. 문의</h2>
+      <h2>13. 문의</h2>
       <p><span class="email" id="email-ko-contact"></span></p>
     </div>
   </div>
@@ -205,48 +225,68 @@
         <tr><td>Monthly</td><td>$1.99/month</td></tr>
         <tr><td>Yearly</td><td>$14.99/year</td></tr>
       </table>
+      <p class="sub-label">Subscription Plans (Pinclip Pro)</p>
+      <table>
+        <tr><td>Monthly</td><td>$2.99/month</td></tr>
+        <tr><td>Yearly</td><td>$24.99/year</td></tr>
+      </table>
+      <p class="note">Pro benefits: unlimited folders, unlimited saves, iCloud sync, and home screen widgets. Previously purchased Pinclip lifetime unlocks remain valid for those buyers.</p>
+      <p class="note">Listed prices are reference prices. The actual amount charged follows the price displayed in the App Store for your region and currency.</p>
       <p class="sub-label">Payment Terms</p>
       <ul>
         <li>Payment is charged to your iTunes account through your Apple ID.</li>
         <li>Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period.</li>
         <li>Renewal charges are billed within 24 hours before the end of the current period.</li>
-        <li>Subscriptions can be managed and cancelled in your App Store account settings.</li>
+        <li>Subscriptions can be managed and cancelled in your App Store account settings. Pro features remain available until the end of the current period after cancellation.</li>
+        <li>Previously purchased subscriptions can be restored on other devices using the in-app "Restore Purchases" function.</li>
         <li>Any unused portion of a free trial period is forfeited upon purchasing a subscription.</li>
       </ul>
       <p class="sub-label">Refunds</p>
-      <p>Refunds are subject to Apple's refund policy.</p>
+      <p>Refunds are subject to Apple's refund policy. Refund requests must be submitted directly to Apple (<a href="https://reportaproblem.apple.com" target="_blank" class="email">reportaproblem.apple.com</a>).</p>
+      <p class="sub-label">Pro Feature Restrictions After Cancellation</p>
+      <p>When a subscription expires or is cancelled, access to Pro features (unlimited folders/saves, iCloud sync, widgets, etc.) ends. Existing saved data remains intact, but creating or modifying items beyond the free plan's limits may be restricted.</p>
     </div>
 
     <div class="section">
-      <h2>4. Location Data (ThanYesterday)</h2>
+      <h2>4. Pinclip Data Handling</h2>
+      <p class="sub-label">URL Sharing and Metadata Fetching</p>
+      <p>When you share a URL to Pinclip through the iOS share sheet, the app fetches Open Graph (OGP) / oEmbed metadata for that URL — such as the title and thumbnail image URL — and stores it on your device. These requests are sent directly to the origin website (YouTube, TikTok, etc.) or to the respective platform's public API; they do not pass through our servers.</p>
+      <p>You can edit or delete saved URLs, titles, thumbnails, notes, tags, and folder data at any time. You are responsible for the content you save. The app must not be used to store or share unlawful content, or content that infringes the copyright, privacy, or other rights of third parties.</p>
+      <p class="sub-label">iCloud Sync</p>
+      <p>For Pro subscribers, saved data (folders, clips, thumbnails, notes, tags) is stored and synced via your Apple iCloud account in a private CloudKit database. This data is transmitted and stored encrypted within Apple's infrastructure; we have no access to it and it is not transmitted to our servers.</p>
+      <p>On the free plan, data is stored only in local device storage and is not synced across devices. Sync may be delayed or fail depending on your iCloud sign-in status, available storage, and network conditions; the specifics are governed by Apple's iCloud terms.</p>
+    </div>
+
+    <div class="section">
+      <h2>5. Location Data (ThanYesterday)</h2>
       <p>The app uses your device's location to provide weather data. Location data is not stored on any server and is used only temporarily for weather API requests. Location access can be changed at any time in iOS Settings.</p>
     </div>
 
     <div class="section">
-      <h2>5. YouTube API Usage (Sidefeed)</h2>
+      <h2>6. YouTube API Usage (Sidefeed)</h2>
       <p>Sidefeed uses the YouTube Data API v3. Through Google OAuth sign-in, it accesses your liked videos and subscription data. This data is used solely for interest category analysis and is not stored on our servers.</p>
       <p>Sidefeed's use of the YouTube API is subject to the <a href="https://www.youtube.com/t/terms" target="_blank" class="email">YouTube Terms of Service</a> and <a href="https://policies.google.com/privacy" target="_blank" class="email">Google Privacy Policy</a>.</p>
       <p>Due to YouTube API daily quota limits, refreshes are limited to 10 per day.</p>
     </div>
 
     <div class="section">
-      <h2>6. Voice Recording and Recognition (Talk Memo)</h2>
+      <h2>7. Voice Recording and Recognition (Talk Memo)</h2>
       <p>Talk Memo records audio via the Apple Watch microphone and uses on-device speech recognition (Apple Speech Recognition) on iPhone to convert recordings to text. All recordings and transcribed text are stored on-device only and are never transmitted to external servers. Accuracy of speech recognition is not guaranteed.</p>
       <p>Users are responsible for the content of their recordings. Using the app to record conversations without the consent of all parties involved, or any other use that violates applicable laws, is prohibited.</p>
     </div>
 
     <div class="section">
-      <h2>7. Disclaimer</h2>
+      <h2>8. Disclaimer</h2>
       <p>Weather data and video information are provided through third-party APIs and accuracy is not guaranteed. We are not liable for any damages resulting from decisions made based on information provided by the apps. The apps are provided "AS IS" without warranties regarding service availability or errors.</p>
     </div>
 
     <div class="section">
-      <h2>8. Intellectual Property</h2>
+      <h2>9. Intellectual Property</h2>
       <p>All intellectual property rights in the apps' design, code, and content belong to us. Users may only use the apps for personal purposes and may not reverse-engineer, copy, or distribute them.</p>
     </div>
 
     <div class="section">
-      <h2>9. Prohibited Use</h2>
+      <h2>10. Prohibited Use</h2>
       <p>The following activities are prohibited:</p>
       <ul>
         <li>Circumventing or disabling the app's security features</li>
@@ -256,17 +296,17 @@
     </div>
 
     <div class="section">
-      <h2>10. Changes to Terms</h2>
+      <h2>11. Changes to Terms</h2>
       <p>We may update these terms. Changes will be posted on this page. Continued use of the app after changes constitutes acceptance of the updated terms.</p>
     </div>
 
     <div class="section">
-      <h2>11. Governing Law</h2>
+      <h2>12. Governing Law</h2>
       <p>These terms are governed by the laws of the Republic of Korea.</p>
     </div>
 
     <div class="section">
-      <h2>12. Contact</h2>
+      <h2>13. Contact</h2>
       <p><span class="email" id="email-en-contact"></span></p>
     </div>
   </div>
