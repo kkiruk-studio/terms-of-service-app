@@ -108,7 +108,7 @@
       <p>각 앱은 무료 기능과 유료(Pro) 기능을 제공합니다. 무료 기능은 별도의 결제 없이 사용할 수 있으며, Pro 기능은 인앱 구매 또는 구독을 통해 이용할 수 있습니다.</p>
     </div>
 
-    <div class="section" data-app="pinclip thanyesterday">
+    <div class="section" data-app="pinclip thanyesterday sidefeed">
       <h2>구독 및 결제</h2>
       <div class="app-block" data-app="thanyesterday">
         <p class="sub-label">구독 상품 (어제보다)</p>
@@ -124,6 +124,14 @@
           <tr><td>연간 구독</td><td>$24.99/년</td></tr>
         </table>
         <p class="note">Pro 혜택: 무제한 폴더, 무제한 저장, iCloud 동기화, 홈 화면 위젯. 과거 판매된 Pinclip 평생이용권(Lifetime)은 해당 구매자에 한해 계속 유효합니다.</p>
+      </div>
+      <div class="app-block" data-app="sidefeed">
+        <p class="sub-label">구독 상품 (Sidefeed Pro)</p>
+        <table>
+          <tr><td>월간 구독</td><td>₩3,900/월</td></tr>
+          <tr><td>연간 구독</td><td>₩26,000/년 (7일 무료 체험)</td></tr>
+        </table>
+        <p class="note">Pro 혜택: 관심사 최대 5개 선택(무료 3개), 다국가 트렌딩(최대 5개 국가). 연간 구독은 7일 무료 체험이 포함되며, 체험 기간 종료 24시간 전에 해지하지 않으면 자동 결제됩니다.</p>
       </div>
       <p class="note">표시 가격은 기준 가격이며, 실제 결제 금액은 App Store에서 사용자의 지역 및 통화에 따라 표시되는 금액을 따릅니다.</p>
       <p class="sub-label">결제 조건</p>
@@ -159,9 +167,10 @@
 
     <div class="section" data-app="sidefeed">
       <h2>YouTube API 이용 (Sidefeed)</h2>
-      <p>Sidefeed는 YouTube Data API v3를 사용합니다. Google OAuth 로그인을 통해 사용자의 좋아요 영상 및 구독 채널 정보에 접근합니다. 이 데이터는 관심 카테고리 분석에만 사용되며, 당사 서버에 저장되지 않습니다.</p>
-      <p>Sidefeed의 YouTube API 사용은 <a href="https://www.youtube.com/t/terms" target="_blank" class="email">YouTube 서비스 약관</a> 및 <a href="https://policies.google.com/privacy" target="_blank" class="email">Google 개인정보 보호방침</a>의 적용을 받습니다.</p>
-      <p>YouTube API 일일 할당량 제한에 따라 새로고침 횟수가 하루 10회로 제한됩니다.</p>
+      <p>"Powered by YouTube." Sidefeed는 YouTube Data API v3를 사용하여 공개된 동영상 메타데이터(제목, 썸네일, 채널명, 게시일, 길이 등)를 표시합니다.</p>
+      <p>Sidefeed는 이용자의 Google 계정 인증이나 개인 YouTube 데이터(좋아요·구독·시청 기록)에 대한 접근을 요청하지 않습니다. 당사 서버(Cloudflare Workers)가 중앙에서 YouTube API를 호출하여 국가별·카테고리별 인기 영상을 임시 캐싱하고, 앱은 서버 캐시만 조회합니다.</p>
+      <p>Sidefeed의 YouTube API 사용은 <a href="https://www.youtube.com/t/terms" target="_blank" class="email">YouTube 서비스 약관</a> 및 <a href="https://policies.google.com/privacy" target="_blank" class="email">Google 개인정보 보호방침</a>의 적용을 받습니다. 본 앱을 사용함으로써 이용자는 위 약관 및 방침에 동의하는 것으로 간주됩니다.</p>
+      <p>서버 캐시 데이터는 최대 48시간 내 자동 갱신·만료되며, YouTube Developer Policies가 허용하는 기간(30일)을 초과하여 보관되지 않습니다. YouTube에서 삭제·비공개 처리된 영상은 다음 캐시 갱신 주기에 반영됩니다.</p>
     </div>
 
     <div class="section" data-app="talkmemo">
@@ -256,7 +265,7 @@
       <p>Each app offers free features and paid (Pro) features. Free features are available without payment. Pro features are available through in-app purchases or subscriptions.</p>
     </div>
 
-    <div class="section" data-app="pinclip thanyesterday">
+    <div class="section" data-app="pinclip thanyesterday sidefeed">
       <h2>Subscriptions and Payment</h2>
       <div class="app-block" data-app="thanyesterday">
         <p class="sub-label">Subscription Plans (ThanYesterday)</p>
@@ -272,6 +281,14 @@
           <tr><td>Yearly</td><td>$24.99/year</td></tr>
         </table>
         <p class="note">Pro benefits: unlimited folders, unlimited saves, iCloud sync, and home screen widgets. Previously purchased Pinclip lifetime unlocks remain valid for those buyers.</p>
+      </div>
+      <div class="app-block" data-app="sidefeed">
+        <p class="sub-label">Subscription Plans (Sidefeed Pro)</p>
+        <table>
+          <tr><td>Monthly</td><td>₩3,900/month</td></tr>
+          <tr><td>Yearly</td><td>₩26,000/year (7-day free trial)</td></tr>
+        </table>
+        <p class="note">Pro benefits: up to 5 interest categories (free plan: 3), multi-country trending (up to 5 countries). The yearly plan includes a 7-day free trial; it renews automatically unless cancelled at least 24 hours before the trial ends.</p>
       </div>
       <p class="note">Listed prices are reference prices. The actual amount charged follows the price displayed in the App Store for your region and currency.</p>
       <p class="sub-label">Payment Terms</p>
@@ -307,9 +324,10 @@
 
     <div class="section" data-app="sidefeed">
       <h2>YouTube API Usage (Sidefeed)</h2>
-      <p>Sidefeed uses the YouTube Data API v3. Through Google OAuth sign-in, it accesses your liked videos and subscription data. This data is used solely for interest category analysis and is not stored on our servers.</p>
-      <p>Sidefeed's use of the YouTube API is subject to the <a href="https://www.youtube.com/t/terms" target="_blank" class="email">YouTube Terms of Service</a> and <a href="https://policies.google.com/privacy" target="_blank" class="email">Google Privacy Policy</a>.</p>
-      <p>Due to YouTube API daily quota limits, refreshes are limited to 10 per day.</p>
+      <p>"Powered by YouTube." Sidefeed uses the YouTube Data API v3 to display public video metadata (titles, thumbnails, channel names, publish dates, durations, etc.).</p>
+      <p>Sidefeed does not request Google account authentication or access to your personal YouTube data (liked videos, subscriptions, or watch history). Our server (Cloudflare Workers) centrally calls the YouTube API to fetch country- and category-level popular videos, temporarily caches them, and the app reads only from this server cache.</p>
+      <p>Sidefeed's use of the YouTube API is subject to the <a href="https://www.youtube.com/t/terms" target="_blank" class="email">YouTube Terms of Service</a> and the <a href="https://policies.google.com/privacy" target="_blank" class="email">Google Privacy Policy</a>. By using the app, you agree to these terms and policies.</p>
+      <p>Server cache data is automatically refreshed and expired within at most 48 hours, and is not retained beyond the period permitted by YouTube's Developer Policies (30 days). Videos that are deleted or made private on YouTube are reflected in the next cache refresh cycle.</p>
     </div>
 
     <div class="section" data-app="talkmemo">
