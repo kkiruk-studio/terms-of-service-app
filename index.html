@@ -79,6 +79,7 @@
       <button data-filter="talkmemo" onclick="filterApp('talkmemo')">Talk Memo</button>
       <button data-filter="honestcamera" onclick="filterApp('honestcamera')">Honest Camera</button>
       <button data-filter="findlocal" onclick="filterApp('findlocal')">Find Local</button>
+      <button data-filter="palette2048" onclick="filterApp('palette2048')">Palette 2048</button>
     </div>
 
     <div class="section" data-app="all">
@@ -111,14 +112,18 @@
         <p class="sub-label">Find Local</p>
         <p>여행지 장소 이름을 발음·로마자·현지 문자 등 어떤 표기로 입력해도, 그 나라에서 실제로 쓰는 지도 앱(네이버·카카오·고덕·구글·애플)으로 바로 이동시키는 검색 유틸리티. 한국·중국·대만·일본·태국·베트남·홍콩·마카오 8개국 + 약 2,800개 장소·역·공항·터미널 별칭 내장.</p>
       </div>
+      <div class="app-block" data-app="palette2048">
+        <p class="sub-label">Palette 2048</p>
+        <p>매일 큐레이팅된 명화의 색을 팔레트로 즐기는 2048 퍼즐 게임. 토요일은 미스터리 데이로 색만 보고 작품 제목을 맞춰봅니다.</p>
+      </div>
     </div>
 
     <div class="section" data-app="all">
       <h2>서비스 이용</h2>
-      <p>당사 앱들은 다양한 수익 모델을 사용합니다. 일부 앱(Pinclip, 어제보다, Sidefeed)은 무료 기능과 유료(Pro) 기능을 제공하며, Talk Memo·Honest Camera와 같이 일회성 유료 앱은 한 번의 결제로 모든 기능을 제공합니다. 결제는 모두 Apple ID를 통해 처리됩니다.</p>
+      <p>당사 앱들은 다양한 수익 모델을 사용합니다. 일부 앱(Pinclip, 어제보다, Sidefeed, Palette 2048)은 무료 기능과 유료(Pro) 기능을 제공하며, Talk Memo·Honest Camera와 같이 일회성 유료 앱은 한 번의 결제로 모든 기능을 제공합니다. 결제는 모두 Apple ID를 통해 처리됩니다.</p>
     </div>
 
-    <div class="section" data-app="pinclip thanyesterday sidefeed">
+    <div class="section" data-app="pinclip thanyesterday sidefeed palette2048">
       <h2>구독 및 결제</h2>
       <div class="app-block" data-app="thanyesterday">
         <p class="sub-label">구독 상품 (어제보다)</p>
@@ -142,6 +147,14 @@
           <tr><td>연간 구독</td><td>₩55,000/년 (월 대비 약 42% 할인)</td></tr>
         </table>
         <p class="note">Pro 혜택: 전체 14개 카테고리 선택(무료 3개), 12개국 트렌딩 자유 전환(무료 1개국), 나중에 보기, iCloud를 통한 차단 목록·저장 영상 동기화. 무료 체험은 제공되지 않습니다.</p>
+      </div>
+      <div class="app-block" data-app="palette2048">
+        <p class="sub-label">구독 상품 (Palette Pro)</p>
+        <table>
+          <tr><td>월간 구독</td><td>$2.99/월</td></tr>
+          <tr><td>연간 구독</td><td>$19.99/년</td></tr>
+        </table>
+        <p class="note">Pro 혜택: 5×5 보드 잠금 해제, 과거 명화 아카이브 무제한 접근. 무료 체험은 제공되지 않습니다.</p>
       </div>
       <p class="note">표시 가격은 기준 가격이며, 실제 결제 금액은 App Store에서 사용자의 지역 및 통화에 따라 표시되는 금액을 따릅니다.</p>
       <p class="sub-label">결제 조건</p>
@@ -229,6 +242,16 @@
       <p>사용자는 녹음 내용에 대한 법적 책임을 가지며, 제3자의 동의 없이 대화를 녹음하여 저장하는 등 관련 법령에 위반되는 용도로 사용해서는 안 됩니다.</p>
     </div>
 
+    <div class="section" data-app="palette2048">
+      <h2>Palette 2048 데이터 처리</h2>
+      <p class="sub-label">로컬 저장</p>
+      <p>게임 진행 상황(현재 보드 상태, 베스트 점수, 푼 미스터리 목록, 연속 플레이 일수, 설정 등)은 사용자의 기기 내 UserDefaults 에 저장됩니다.</p>
+      <p class="sub-label">iCloud 동기화</p>
+      <p>같은 Apple ID 의 다른 기기로 진행 상황을 자동 동기화하기 위해 위 데이터는 사용자의 Apple iCloud Key-Value Store 에도 저장됩니다. 데이터는 Apple iCloud 인프라에 저장되며 당사 서버는 거치지 않습니다. iCloud 동기화는 iOS 설정에서 끌 수 있습니다.</p>
+      <p class="sub-label">알림</p>
+      <p>사용자가 설정에서 "매일 알림"을 켜면 매일 정해진 시각에 로컬 알림이 표시됩니다. 알림은 기기 내에서만 처리되며 외부 서버로 전송되지 않습니다.</p>
+    </div>
+
     <div class="section" data-app="all">
       <h2>면책 조항</h2>
       <p>날씨 데이터, 영상 메타데이터 등은 외부 API를 통해 제공되며, 정확성을 보장하지 않습니다. 앱에서 제공하는 정보에 기반한 판단으로 발생한 손해에 대해 당사는 책임을 지지 않습니다. 앱은 "있는 그대로(AS IS)" 제공되며, 서비스 중단이나 오류에 대한 보증을 하지 않습니다.</p>
@@ -286,6 +309,7 @@
       <button data-filter="talkmemo" onclick="filterApp('talkmemo')">Talk Memo</button>
       <button data-filter="honestcamera" onclick="filterApp('honestcamera')">Honest Camera</button>
       <button data-filter="findlocal" onclick="filterApp('findlocal')">Find Local</button>
+      <button data-filter="palette2048" onclick="filterApp('palette2048')">Palette 2048</button>
     </div>
 
     <div class="section" data-app="all">
@@ -318,14 +342,18 @@
         <p class="sub-label">Find Local</p>
         <p>A travel utility that takes any spelling — phonetic, Romanized, or native script — and routes the search to the right local map app for the destination country (Naver, KakaoMap, Amap, Google, or Apple). Covers 8 countries (Korea, China, Taiwan, Japan, Thailand, Vietnam, Hong Kong, Macau) with ~2,800 pre-registered places, stations, airports, and terminals.</p>
       </div>
+      <div class="app-block" data-app="palette2048">
+        <p class="sub-label">Palette 2048</p>
+        <p>A 2048 puzzle game where each day's board uses the color palette of a curated masterpiece. Saturday is Mystery Day — guess the painting from its colors alone.</p>
+      </div>
     </div>
 
     <div class="section" data-app="all">
       <h2>Use of Services</h2>
-      <p>Our apps use various revenue models. Some apps (Pinclip, ThanYesterday, Sidefeed) offer free features alongside paid (Pro) features, while others such as Talk Memo and Honest Camera are one-time paid apps where a single purchase unlocks all features. All payments are processed through Apple ID.</p>
+      <p>Our apps use various revenue models. Some apps (Pinclip, ThanYesterday, Sidefeed, Palette 2048) offer free features alongside paid (Pro) features, while others such as Talk Memo and Honest Camera are one-time paid apps where a single purchase unlocks all features. All payments are processed through Apple ID.</p>
     </div>
 
-    <div class="section" data-app="pinclip thanyesterday sidefeed">
+    <div class="section" data-app="pinclip thanyesterday sidefeed palette2048">
       <h2>Subscriptions and Payment</h2>
       <div class="app-block" data-app="thanyesterday">
         <p class="sub-label">Subscription Plans (ThanYesterday)</p>
@@ -349,6 +377,14 @@
           <tr><td>Yearly</td><td>₩55,000/year (save ~42% vs. monthly)</td></tr>
         </table>
         <p class="note">Pro benefits: all 14 interest categories (free plan: 3), unlimited switching across 12 trending countries (free plan: 1), Watch Later, and iCloud sync for your block list and saved videos. No free trial is offered.</p>
+      </div>
+      <div class="app-block" data-app="palette2048">
+        <p class="sub-label">Subscription Plans (Palette Pro)</p>
+        <table>
+          <tr><td>Monthly</td><td>$2.99/month</td></tr>
+          <tr><td>Yearly</td><td>$19.99/year</td></tr>
+        </table>
+        <p class="note">Pro benefits: 5×5 board unlock, unlimited access to the past-paintings archive. No free trial is offered.</p>
       </div>
       <p class="note">Listed prices are reference prices. The actual amount charged follows the price displayed in the App Store for your region and currency.</p>
       <p class="sub-label">Payment Terms</p>
@@ -434,6 +470,16 @@
       <h2>Voice Recording and Recognition (Talk Memo)</h2>
       <p>Talk Memo records audio via the Apple Watch microphone and uses on-device speech recognition (Apple Speech Recognition) on iPhone to convert recordings to text. Recording and transcription are both processed on-device, and transcribed text memos are automatically synced across devices signed in to the same Apple ID through iCloud Key-Value Store. Data is stored on Apple's iCloud infrastructure and never passes through our servers. You can disable iCloud sync from iOS Settings. Accuracy of speech recognition is not guaranteed.</p>
       <p>Users are responsible for the content of their recordings. Using the app to record conversations without the consent of all parties involved, or any other use that violates applicable laws, is prohibited.</p>
+    </div>
+
+    <div class="section" data-app="palette2048">
+      <h2>Palette 2048 Data Handling</h2>
+      <p class="sub-label">Local storage</p>
+      <p>Game progress (current board state, best scores, solved-mystery list, daily-play streak, settings) is stored on your device in UserDefaults.</p>
+      <p class="sub-label">iCloud sync</p>
+      <p>To automatically sync progress across devices signed in to the same Apple ID, the data above is also stored in your Apple iCloud Key-Value Store. Data lives on Apple's iCloud infrastructure and never passes through our servers. You can disable iCloud sync in iOS Settings.</p>
+      <p class="sub-label">Notifications</p>
+      <p>If you enable "Daily Reminder" in Settings, a local notification appears at a fixed time each day. Notifications are delivered on-device only and are not sent to any external server.</p>
     </div>
 
     <div class="section" data-app="all">
