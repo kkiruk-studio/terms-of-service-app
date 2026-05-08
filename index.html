@@ -78,6 +78,7 @@
       <button data-filter="sidefeed" onclick="filterApp('sidefeed')">Sidefeed</button>
       <button data-filter="talkmemo" onclick="filterApp('talkmemo')">Talk Memo</button>
       <button data-filter="honestcamera" onclick="filterApp('honestcamera')">Honest Camera</button>
+      <button data-filter="findlocal" onclick="filterApp('findlocal')">Find Local</button>
     </div>
 
     <div class="section" data-app="all">
@@ -105,6 +106,10 @@
       <div class="app-block" data-app="honestcamera">
         <p class="sub-label">Honest Camera</p>
         <p>3세 이상 유아를 위한 단일 셔터 카메라 앱. 모드 전환·갤러리·설정 메뉴 없이 셔터 한 개로 촬영하고 사진은 사진 보관함에 자동 저장됩니다.</p>
+      </div>
+      <div class="app-block" data-app="findlocal">
+        <p class="sub-label">Find Local</p>
+        <p>여행지 장소 이름을 발음·로마자·현지 문자 등 어떤 표기로 입력해도, 그 나라에서 실제로 쓰는 지도 앱(네이버·카카오·고덕·구글·애플)으로 바로 이동시키는 검색 유틸리티. 한국·중국·대만·일본·태국·베트남·홍콩·마카오 8개국 + 약 2,800개 장소·역·공항·터미널 별칭 내장.</p>
       </div>
     </div>
 
@@ -165,6 +170,17 @@
       <p>Talk Memo는 일회성 유료 앱으로 구독, 인앱 구매, 광고가 없습니다. 한 번의 결제로 모든 기능을 사용할 수 있습니다. 표시 가격은 기준 가격이며, 실제 결제 금액은 App Store에서 사용자의 지역 및 통화에 따라 표시되는 금액을 따릅니다.</p>
       <p class="sub-label">결제 및 환불</p>
       <p>결제는 Apple ID 계정을 통해 처리되며, 당사는 결제 정보를 수집·저장하지 않습니다. 환불은 Apple의 환불 정책에 따르며, 환불 요청은 Apple에 직접 제출해야 합니다(<a href="https://reportaproblem.apple.com" target="_blank" class="email">reportaproblem.apple.com</a>).</p>
+    </div>
+
+    <div class="section" data-app="findlocal">
+      <h2>무료 이용 (Find Local)</h2>
+      <p>Find Local 은 광고·구독·인앱 구매 없이 모든 기능을 무료로 제공하는 앱입니다. 계정 등록도 필요하지 않습니다.</p>
+      <p class="sub-label">데이터 처리</p>
+      <p>당사는 이용자 데이터를 자체 서버에 저장하지 않습니다. 입력한 검색어, 저장한 장소, 환경 설정은 기기 내 UserDefaults 에 저장됩니다. iCloud 동기화가 활성화되어 있으면 최근 검색어와 저장한 장소가 사용자의 Apple iCloud 계정 Key-Value Store 에도 저장되어 같은 Apple ID 기기 간 자동 동기화 및 신규 기기 설정 시 복원이 이루어집니다. 자세한 내용은 <a href="https://kkiruk-studio.github.io/privacy-policy-app/" target="_blank" class="email">개인정보 처리방침</a>을 참고하세요.</p>
+      <p class="sub-label">제3자 지도 앱 책임 분리</p>
+      <p>Find Local 은 사용자가 선택한 검색어를 iOS 시스템의 URL 스킴/딥링크를 통해 Apple Maps · Google Maps · Naver Map · KakaoMap · Amap (高德地图) 중 하나로 전달하는 역할만 수행합니다. 각 지도 앱이 검색 결과를 어떻게 처리·표시하는지에 대한 책임은 해당 지도 앱 제공자에게 있으며, 당사는 이에 대해 책임지지 않습니다.</p>
+      <p class="sub-label">검색 결과 정확성</p>
+      <p>당사는 검색 별칭 사전과 추천 장소 데이터의 정확성을 위해 노력하지만, 모든 결과의 완전성·정확성·최신성을 보장하지 않습니다. 실제 위치 정보는 사용자가 선택한 지도 앱의 데이터를 따릅니다.</p>
     </div>
 
     <div class="section" data-app="honestcamera">
@@ -269,6 +285,7 @@
       <button data-filter="sidefeed" onclick="filterApp('sidefeed')">Sidefeed</button>
       <button data-filter="talkmemo" onclick="filterApp('talkmemo')">Talk Memo</button>
       <button data-filter="honestcamera" onclick="filterApp('honestcamera')">Honest Camera</button>
+      <button data-filter="findlocal" onclick="filterApp('findlocal')">Find Local</button>
     </div>
 
     <div class="section" data-app="all">
@@ -296,6 +313,10 @@
       <div class="app-block" data-app="honestcamera">
         <p class="sub-label">Honest Camera</p>
         <p>A single-shutter camera app for children ages 3 and up. No mode switches, no gallery, no settings menu — one button to take a photo, and photos save automatically to the Photos library.</p>
+      </div>
+      <div class="app-block" data-app="findlocal">
+        <p class="sub-label">Find Local</p>
+        <p>A travel utility that takes any spelling — phonetic, Romanized, or native script — and routes the search to the right local map app for the destination country (Naver, KakaoMap, Amap, Google, or Apple). Covers 8 countries (Korea, China, Taiwan, Japan, Thailand, Vietnam, Hong Kong, Macau) with ~2,800 pre-registered places, stations, airports, and terminals.</p>
       </div>
     </div>
 
@@ -356,6 +377,17 @@
       <p>Talk Memo is a one-time paid app with no subscriptions, in-app purchases, or advertisements. A single purchase unlocks all features. Listed prices are reference prices; the actual amount charged follows the price displayed in the App Store for your region and currency.</p>
       <p class="sub-label">Payment and Refunds</p>
       <p>Payment is charged through your Apple ID. We do not collect or store payment information. Refunds are subject to Apple's refund policy and must be submitted directly to Apple (<a href="https://reportaproblem.apple.com" target="_blank" class="email">reportaproblem.apple.com</a>).</p>
+    </div>
+
+    <div class="section" data-app="findlocal">
+      <h2>Free Use (Find Local)</h2>
+      <p>Find Local is a free app with no advertising, no subscriptions, and no in-app purchases. No account registration is required.</p>
+      <p class="sub-label">Data handling</p>
+      <p>We do not store user data on any external server. Search queries, saved places, and preferences are stored in on-device UserDefaults. When iCloud sync is enabled, recent searches and saved places are also stored in your Apple iCloud account's Key-Value Store, allowing automatic sync across devices on the same Apple ID and restoration on new device setup. See the <a href="https://kkiruk-studio.github.io/privacy-policy-app/" target="_blank" class="email">Privacy Policy</a> for details.</p>
+      <p class="sub-label">Third-party map app responsibility</p>
+      <p>Find Local's role is limited to passing your selected query to one of Apple Maps · Google Maps · Naver Map · KakaoMap · Amap via the iOS system's URL schemes / deep links. How each destination map app processes and displays your search result is the responsibility of that map app's provider, and we are not liable for it.</p>
+      <p class="sub-label">Search result accuracy</p>
+      <p>While we maintain the search alias dictionary and recommended-place data with care, we do not guarantee the completeness, accuracy, or timeliness of all results. Actual location data is governed by the map app you choose.</p>
     </div>
 
     <div class="section" data-app="honestcamera">
