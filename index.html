@@ -80,6 +80,7 @@
       <button data-filter="honestcamera" onclick="filterApp('honestcamera')">Honest Camera</button>
       <button data-filter="findlocal" onclick="filterApp('findlocal')">Find Local</button>
       <button data-filter="palette2048" onclick="filterApp('palette2048')">Palette 2048</button>
+      <button data-filter="tetsulog" onclick="filterApp('tetsulog')">테츠로그</button>
     </div>
 
     <div class="section" data-app="all">
@@ -116,14 +117,18 @@
         <p class="sub-label">Palette 2048</p>
         <p>매일 큐레이팅된 명화의 색을 팔레트로 즐기는 2048 퍼즐 게임. 토요일은 미스터리 데이로 색만 보고 작품 제목을 맞춰봅니다.</p>
       </div>
+      <div class="app-block" data-app="tetsulog">
+        <p class="sub-label">테츠로그 (鉄ログ / Tetsulog)</p>
+        <p>일본 전국 철도 노선·역을 시각화하고 방문 기록을 모으는 乗りつぶ(노리츠부) 트래커. JR 그룹 6사 + 도쿄메트로·도에이·한큐·한신·게이한·긴테쓰·난카이·메이테쓰·니시테쓰 등 37 회사 / 약 370 노선 / 7,000+ 역을 내장. 부분 구간 컬러링으로 진행률 시각화, 역 스탬프 수첩, 활동 기록 / 47도도부현 히트맵을 제공.</p>
+      </div>
     </div>
 
     <div class="section" data-app="all">
       <h2>서비스 이용</h2>
-      <p>당사 앱들은 다양한 수익 모델을 사용합니다. 일부 앱(Pinclip, 어제보다, Sidefeed, Palette 2048)은 무료 기능과 유료(Pro) 기능을 제공하며, Talk Memo·Honest Camera와 같이 일회성 유료 앱은 한 번의 결제로 모든 기능을 제공합니다. 결제는 모두 Apple ID를 통해 처리됩니다.</p>
+      <p>당사 앱들은 다양한 수익 모델을 사용합니다. 일부 앱(Pinclip, 어제보다, Sidefeed, Palette 2048, 테츠로그)은 무료 기능과 유료(Pro) 기능을 제공하며, Talk Memo·Honest Camera와 같이 일회성 유료 앱은 한 번의 결제로 모든 기능을 제공합니다. 테츠로그는 추가로 평생 이용권(일회성 결제) 옵션을 함께 제공합니다. 결제는 모두 Apple ID를 통해 처리됩니다.</p>
     </div>
 
-    <div class="section" data-app="pinclip thanyesterday sidefeed palette2048">
+    <div class="section" data-app="pinclip thanyesterday sidefeed palette2048 tetsulog">
       <h2>구독 및 결제</h2>
       <div class="app-block" data-app="thanyesterday">
         <p class="sub-label">구독 상품 (어제보다)</p>
@@ -155,6 +160,15 @@
           <tr><td>연간 구독</td><td>$19.99/년</td></tr>
         </table>
         <p class="note">Pro 혜택: 5×5 보드 잠금 해제, 과거 명화 아카이브 무제한 접근. 무료 체험은 제공되지 않습니다.</p>
+      </div>
+      <div class="app-block" data-app="tetsulog">
+        <p class="sub-label">구독·구매 상품 (테츠로그 Pro)</p>
+        <table>
+          <tr><td>월간 구독</td><td>¥300/월</td></tr>
+          <tr><td>연간 구독</td><td>¥2,400/년 (월간 대비 약 33% 할인)</td></tr>
+          <tr><td>평생 이용권 (一括)</td><td>¥4,800 (일회성)</td></tr>
+        </table>
+        <p class="note">Pro 혜택: 즐겨찾기 무제한(무료 최대 5개 노선), 회사별 진행 차트와 활동 캘린더, 47도도부현 히트맵, 공유 카드 워터마크 제거, PDF 御朱印帳 출력(향후 제공). 무료 체험은 제공되지 않습니다. iCloud 동기화는 무료·Pro 구분 없이 모든 사용자에게 기본 제공됩니다(기기 변경·분실 시에도 방문 기록 보존을 위해 과금 대상에서 제외).</p>
       </div>
       <p class="note">표시 가격은 기준 가격이며, 실제 결제 금액은 App Store에서 사용자의 지역 및 통화에 따라 표시되는 금액을 따릅니다.</p>
       <p class="sub-label">결제 조건</p>
@@ -310,6 +324,7 @@
       <button data-filter="honestcamera" onclick="filterApp('honestcamera')">Honest Camera</button>
       <button data-filter="findlocal" onclick="filterApp('findlocal')">Find Local</button>
       <button data-filter="palette2048" onclick="filterApp('palette2048')">Palette 2048</button>
+      <button data-filter="tetsulog" onclick="filterApp('tetsulog')">Tetsulog</button>
     </div>
 
     <div class="section" data-app="all">
@@ -346,14 +361,18 @@
         <p class="sub-label">Palette 2048</p>
         <p>A 2048 puzzle game where each day's board uses the color palette of a curated masterpiece. Saturday is Mystery Day — guess the painting from its colors alone.</p>
       </div>
+      <div class="app-block" data-app="tetsulog">
+        <p class="sub-label">Tetsulog (鉄ログ)</p>
+        <p>A "norizubu" (乗りつぶし) tracker that visualizes Japan's rail network and lets riders log every station they visit. Ships with ~370 lines and 7,000+ stations covering the 6 JR group companies plus Tokyo Metro, Toei, Hankyu, Hanshin, Keihan, Kintetsu, Nankai, Meitetsu, Nishitetsu and other major operators (37 companies in total). Shows progress as partial-segment coloring on actual track geometry, plus a station stamp book, activity calendar, and 47-prefecture heatmap.</p>
+      </div>
     </div>
 
     <div class="section" data-app="all">
       <h2>Use of Services</h2>
-      <p>Our apps use various revenue models. Some apps (Pinclip, ThanYesterday, Sidefeed, Palette 2048) offer free features alongside paid (Pro) features, while others such as Talk Memo and Honest Camera are one-time paid apps where a single purchase unlocks all features. All payments are processed through Apple ID.</p>
+      <p>Our apps use various revenue models. Some apps (Pinclip, ThanYesterday, Sidefeed, Palette 2048, Tetsulog) offer free features alongside paid (Pro) features, while others such as Talk Memo and Honest Camera are one-time paid apps where a single purchase unlocks all features. Tetsulog additionally offers a lifetime (one-time payment) unlock alongside its subscriptions. All payments are processed through Apple ID.</p>
     </div>
 
-    <div class="section" data-app="pinclip thanyesterday sidefeed palette2048">
+    <div class="section" data-app="pinclip thanyesterday sidefeed palette2048 tetsulog">
       <h2>Subscriptions and Payment</h2>
       <div class="app-block" data-app="thanyesterday">
         <p class="sub-label">Subscription Plans (ThanYesterday)</p>
@@ -385,6 +404,15 @@
           <tr><td>Yearly</td><td>$19.99/year</td></tr>
         </table>
         <p class="note">Pro benefits: 5×5 board unlock, unlimited access to the past-paintings archive. No free trial is offered.</p>
+      </div>
+      <div class="app-block" data-app="tetsulog">
+        <p class="sub-label">Subscription & Purchase (Tetsulog Pro)</p>
+        <table>
+          <tr><td>Monthly</td><td>¥300/month</td></tr>
+          <tr><td>Yearly</td><td>¥2,400/year (~33% off vs monthly)</td></tr>
+          <tr><td>Lifetime (one-time)</td><td>¥4,800</td></tr>
+        </table>
+        <p class="note">Pro benefits: unlimited favorites (free plan: up to 5 lines), per-operator progress charts and activity calendar, 47-prefecture heatmap, watermark-free share cards, PDF 御朱印帳 export (coming soon). No free trial is offered. iCloud sync is available to all users (both free and Pro) — visit records are considered essential data that must survive device changes or loss, and are therefore never gated.</p>
       </div>
       <p class="note">Listed prices are reference prices. The actual amount charged follows the price displayed in the App Store for your region and currency.</p>
       <p class="sub-label">Payment Terms</p>
