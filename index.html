@@ -67,7 +67,7 @@
 
   <!-- 한국어 -->
   <div id="lang-ko" style="display:none;">
-    <p class="meta">시행일: 2026년 4월 21일 &middot; 개발사: kkiruk studio &middot; 문의: <span class="email" id="email-ko"></span></p>
+    <p class="meta">시행일: 2026년 5월 26일 &middot; 개발사: kkiruk studio &middot; 문의: <span class="email" id="email-ko"></span></p>
     <p class="intro">kkiruk studio(이하 "당사")가 운영하는 아래 앱들의 이용약관입니다. 앱을 다운로드하거나 사용함으로써 본 약관에 동의하는 것으로 간주합니다.</p>
     <p class="tab-label">앱별로 보기</p>
     <div class="app-tabs">
@@ -78,7 +78,7 @@
       <button data-filter="sidefeed" onclick="filterApp('sidefeed')">Sidefeed</button>
       <button data-filter="talkmemo" onclick="filterApp('talkmemo')">Talk Memo</button>
       <button data-filter="honestcamera" onclick="filterApp('honestcamera')">Honest Camera</button>
-      <button data-filter="findlocal" onclick="filterApp('findlocal')">Find Local</button>
+      <button data-filter="findlocal" onclick="filterApp('findlocal')">Local Link</button>
       <button data-filter="palette2048" onclick="filterApp('palette2048')">Palette 2048</button>
       <button data-filter="tetsulog" onclick="filterApp('tetsulog')">테츠로그</button>
     </div>
@@ -110,7 +110,7 @@
         <p>3세 이상 유아를 위한 단일 셔터 카메라 앱. 모드 전환·갤러리·설정 메뉴 없이 셔터 한 개로 촬영하고 사진은 사진 보관함에 자동 저장됩니다.</p>
       </div>
       <div class="app-block" data-app="findlocal">
-        <p class="sub-label">Find Local</p>
+        <p class="sub-label">Local Link / 로컬링크</p>
         <p>여행지 장소 이름을 발음·로마자·현지 문자 등 어떤 표기로 입력해도, 그 나라에서 실제로 쓰는 지도 앱(네이버·카카오·고덕·구글·애플)으로 바로 이동시키는 검색 유틸리티. 한국·중국·대만·일본·태국·베트남·홍콩·마카오 8개국 + 약 2,800개 장소·역·공항·터미널 별칭 내장.</p>
       </div>
       <div class="app-block" data-app="palette2048">
@@ -200,14 +200,16 @@
     </div>
 
     <div class="section" data-app="findlocal">
-      <h2>무료 이용 (Find Local)</h2>
-      <p>Find Local 은 광고·구독·인앱 구매 없이 모든 기능을 무료로 제공하는 앱입니다. 계정 등록도 필요하지 않습니다.</p>
+      <h2>무료 이용 (Local Link)</h2>
+      <p>Local Link는 광고·구독·인앱 구매 없이 모든 기능을 무료로 제공하는 앱입니다. 계정 등록도 필요하지 않습니다.</p>
       <p class="sub-label">데이터 처리</p>
-      <p>당사는 이용자 데이터를 자체 서버에 저장하지 않습니다. 입력한 검색어, 저장한 장소, 환경 설정은 기기 내 UserDefaults 에 저장됩니다. iCloud 동기화가 활성화되어 있으면 최근 검색어와 저장한 장소가 사용자의 Apple iCloud 계정 Key-Value Store 에도 저장되어 같은 Apple ID 기기 간 자동 동기화 및 신규 기기 설정 시 복원이 이루어집니다. 자세한 내용은 <a href="https://kkiruk-studio.github.io/privacy-policy-app/" target="_blank" class="email">개인정보 처리방침</a>을 참고하세요.</p>
+      <p>입력한 검색어, 저장한 장소, 환경 설정은 기본적으로 기기 내에 저장됩니다. iCloud 동기화가 활성화되어 있으면 최근 검색어와 저장한 장소가 사용자의 Apple iCloud 계정 Key-Value Store 에도 저장되어 같은 Apple ID 기기 간 자동 동기화 및 신규 기기 설정 시 복원이 이루어집니다. 자세한 내용은 <a href="https://kkiruk-studio.github.io/privacy-policy-app/" target="_blank" class="email">개인정보 처리방침</a>을 참고하세요.</p>
+      <p class="sub-label">사용 지표 및 진단 정보</p>
+      <p>당사는 향후 앱 품질 개선, 오류 진단, 기능 사용 현황 파악을 위해 비식별 사용 지표와 진단 정보를 당사 서버 또는 당사가 이용하는 클라우드 인프라로 전송하는 기능을 추가할 수 있습니다. 이러한 정보는 서비스 개선과 안정성 확보 목적으로만 사용되며, 원칙적으로 검색어 원문, 저장한 장소명, 정확한 위치, 연락처, 결제 정보는 포함하지 않습니다. 지표 수집이 활성화되는 경우 수집 항목과 보관 방식은 개인정보 처리방침에 반영합니다.</p>
       <p class="sub-label">제3자 지도 앱 책임 분리</p>
-      <p>Find Local 은 사용자가 선택한 검색어를 iOS 시스템의 URL 스킴/딥링크를 통해 Apple Maps · Google Maps · Naver Map · KakaoMap · Amap (高德地图) 중 하나로 전달하는 역할만 수행합니다. 각 지도 앱이 검색 결과를 어떻게 처리·표시하는지에 대한 책임은 해당 지도 앱 제공자에게 있으며, 당사는 이에 대해 책임지지 않습니다.</p>
+      <p>Local Link는 사용자가 선택한 검색어를 iOS 시스템의 URL 스킴/딥링크를 통해 사용자가 선택한 지도 앱 또는 웹 지도 페이지로 전달하는 역할만 수행합니다. 각 지도 앱 또는 웹 서비스가 검색 결과를 어떻게 처리·표시하는지에 대한 책임은 해당 제공자에게 있으며, 당사는 이에 대해 책임지지 않습니다.</p>
       <p class="sub-label">검색 결과 정확성</p>
-      <p>당사는 검색 별칭 사전과 추천 장소 데이터의 정확성을 위해 노력하지만, 모든 결과의 완전성·정확성·최신성을 보장하지 않습니다. 실제 위치 정보는 사용자가 선택한 지도 앱의 데이터를 따릅니다.</p>
+      <p>당사는 검색 별칭 사전과 추천 장소 데이터의 정확성을 위해 노력하지만, 모든 결과의 완전성·정확성·최신성을 보장하지 않습니다. 실제 위치 정보는 사용자가 선택한 지도 앱 또는 웹 서비스의 데이터를 따릅니다.</p>
     </div>
 
     <div class="section" data-app="honestcamera">
@@ -311,7 +313,7 @@
 
   <!-- English -->
   <div id="lang-en">
-    <p class="meta">Effective: April 21, 2026 &middot; Developer: kkiruk studio &middot; Contact: <span class="email" id="email-en"></span></p>
+    <p class="meta">Effective: May 26, 2026 &middot; Developer: kkiruk studio &middot; Contact: <span class="email" id="email-en"></span></p>
     <p class="intro">These Terms of Service govern your use of the apps operated by kkiruk studio ("we"). By downloading or using our apps, you agree to these terms.</p>
     <p class="tab-label">Filter by app</p>
     <div class="app-tabs">
@@ -322,7 +324,7 @@
       <button data-filter="sidefeed" onclick="filterApp('sidefeed')">Sidefeed</button>
       <button data-filter="talkmemo" onclick="filterApp('talkmemo')">Talk Memo</button>
       <button data-filter="honestcamera" onclick="filterApp('honestcamera')">Honest Camera</button>
-      <button data-filter="findlocal" onclick="filterApp('findlocal')">Find Local</button>
+      <button data-filter="findlocal" onclick="filterApp('findlocal')">Local Link</button>
       <button data-filter="palette2048" onclick="filterApp('palette2048')">Palette 2048</button>
       <button data-filter="tetsulog" onclick="filterApp('tetsulog')">Tetsulog</button>
     </div>
@@ -354,7 +356,7 @@
         <p>A single-shutter camera app for children ages 3 and up. No mode switches, no gallery, no settings menu — one button to take a photo, and photos save automatically to the Photos library.</p>
       </div>
       <div class="app-block" data-app="findlocal">
-        <p class="sub-label">Find Local</p>
+        <p class="sub-label">Local Link / 로컬링크</p>
         <p>A travel utility that takes any spelling — phonetic, Romanized, or native script — and routes the search to the right local map app for the destination country (Naver, KakaoMap, Amap, Google, or Apple). Covers 8 countries (Korea, China, Taiwan, Japan, Thailand, Vietnam, Hong Kong, Macau) with ~2,800 pre-registered places, stations, airports, and terminals.</p>
       </div>
       <div class="app-block" data-app="palette2048">
@@ -444,14 +446,16 @@
     </div>
 
     <div class="section" data-app="findlocal">
-      <h2>Free Use (Find Local)</h2>
-      <p>Find Local is a free app with no advertising, no subscriptions, and no in-app purchases. No account registration is required.</p>
-      <p class="sub-label">Data handling</p>
-      <p>We do not store user data on any external server. Search queries, saved places, and preferences are stored in on-device UserDefaults. When iCloud sync is enabled, recent searches and saved places are also stored in your Apple iCloud account's Key-Value Store, allowing automatic sync across devices on the same Apple ID and restoration on new device setup. See the <a href="https://kkiruk-studio.github.io/privacy-policy-app/" target="_blank" class="email">Privacy Policy</a> for details.</p>
-      <p class="sub-label">Third-party map app responsibility</p>
-      <p>Find Local's role is limited to passing your selected query to one of Apple Maps · Google Maps · Naver Map · KakaoMap · Amap via the iOS system's URL schemes / deep links. How each destination map app processes and displays your search result is the responsibility of that map app's provider, and we are not liable for it.</p>
-      <p class="sub-label">Search result accuracy</p>
-      <p>While we maintain the search alias dictionary and recommended-place data with care, we do not guarantee the completeness, accuracy, or timeliness of all results. Actual location data is governed by the map app you choose.</p>
+      <h2>Free Use (Local Link)</h2>
+      <p>Local Link is a free app with no advertising, no subscriptions, and no in-app purchases. No account registration is required.</p>
+      <p class="sub-label">Data Processing</p>
+      <p>Search queries, saved places, and preferences are stored on your device by default. When iCloud sync is enabled, recent searches and saved places are also stored in your Apple iCloud account's Key-Value Store, allowing automatic sync across devices on the same Apple ID and restoration on new device setup. See the <a href="https://kkiruk-studio.github.io/privacy-policy-app/" target="_blank" class="email">Privacy Policy</a> for details.</p>
+      <p class="sub-label">Usage Metrics and Diagnostics</p>
+      <p>In the future, we may add functionality that transmits non-identifying usage metrics and diagnostic information to servers operated by us or by our cloud infrastructure provider to improve app quality, diagnose errors, and understand feature usage. Such information is used only for service improvement and stability. By default, it does not include raw search queries, saved place names, precise location, contacts, or payment information. If metrics collection is enabled, the collected categories and retention practices will be reflected in the Privacy Policy.</p>
+      <p class="sub-label">Third-Party Map Services</p>
+      <p>Local Link's role is limited to passing your selected query through iOS URL schemes / deep links to the map app or web map page you choose. How each destination map app or web service processes and displays your search result is the responsibility of that provider, and we are not liable for it.</p>
+      <p class="sub-label">Search Result Accuracy</p>
+      <p>We make efforts to keep alias dictionaries and recommended place data accurate, but we do not guarantee completeness, accuracy, or timeliness of every result. Actual location information depends on the data provided by the map app or web service you choose.</p>
     </div>
 
     <div class="section" data-app="honestcamera">
