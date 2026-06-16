@@ -82,6 +82,7 @@
       <button data-filter="palette2048" onclick="filterApp('palette2048')">Palette 2048</button>
       <button data-filter="song2048" onclick="filterApp('song2048')">Song 2048</button>
       <button data-filter="tetsulog" onclick="filterApp('tetsulog')">테츠로그</button>
+      <button data-filter="everykeep" onclick="filterApp('everykeep')">everykeep</button>
       <button data-filter="catscute" onclick="filterApp('catscute')">고양이는 정말 귀여워</button>
       <button data-filter="catspop" onclick="filterApp('catspop')">고양이는 정말 팡팡</button>
       <button data-filter="james" onclick="filterApp('james')">James 시리즈</button>
@@ -128,6 +129,10 @@
       <div class="app-block" data-app="tetsulog">
         <p class="sub-label">테츠로그 (鉄ログ / Tetsulog)</p>
         <p>일본 전국 철도 노선·역을 시각화하고 방문 기록을 모으는 乗りつぶ(노리츠부) 트래커. JR 그룹 6사 + 도쿄메트로·도에이·한큐·한신·게이한·긴테쓰·난카이·메이테쓰·니시테쓰 등 37 회사 / 약 370 노선 / 7,000+ 역을 내장. 부분 구간 컬러링으로 진행률 시각화, 역 스탬프 수첩, 활동 기록 / 47도도부현 히트맵을 제공.</p>
+      </div>
+      <div class="app-block" data-app="everykeep">
+        <p class="sub-label">everykeep</p>
+        <p>가정 내 모든 물건의 교체·청소 주기, 보증 기간, 정품 등록을 한곳에서 기록하고 제때 알림으로 챙겨주는 관리 앱. 수명 게이지, 주간·월간 캘린더, 교체 이력, 영수증·보증서 사진 보관을 제공하며, 모든 데이터는 기기 내에만 저장됩니다.</p>
       </div>
       <div class="app-block" data-app="catscute">
         <p class="sub-label">고양이는 정말 귀여워 (Cats are Cute)</p>
@@ -245,6 +250,14 @@
       <p>Local Link는 사용자가 선택한 검색어를 iOS 시스템의 URL 스킴/딥링크를 통해 사용자가 선택한 지도 앱 또는 웹 지도 페이지로 전달하는 역할만 수행합니다. 각 지도 앱 또는 웹 서비스가 검색 결과를 어떻게 처리·표시하는지에 대한 책임은 해당 제공자에게 있으며, 당사는 이에 대해 책임지지 않습니다.</p>
       <p class="sub-label">검색 결과 정확성</p>
       <p>당사는 검색 별칭 사전과 추천 장소 데이터의 정확성을 위해 노력하지만, 모든 결과의 완전성·정확성·최신성을 보장하지 않습니다. 실제 위치 정보는 사용자가 선택한 지도 앱 또는 웹 서비스의 데이터를 따릅니다.</p>
+    </div>
+    <div class="section" data-app="everykeep">
+      <h2>무료 이용 (everykeep)</h2>
+      <p>everykeep은 광고·구독·인앱 구매 없이 모든 기능을 무료로 제공하는 앱입니다. 계정 등록도 필요하지 않습니다.</p>
+      <p class="sub-label">데이터 처리</p>
+      <p>이용자가 입력한 제품 정보와 첨부한 사진, 알림·환경 설정은 모두 기기 내(SwiftData 저장소·앱 컨테이너·UserDefaults)에만 저장됩니다. 당사 서버나 외부 서비스로 전송·동기화되지 않으며, 앱을 삭제하면 함께 제거됩니다. 자세한 내용은 <a href="https://kkiruk-studio.github.io/privacy-policy-app/" target="_blank" class="email">개인정보 처리방침</a>을 참고하세요.</p>
+      <p class="sub-label">알림</p>
+      <p>교체·청소·보증 리마인더는 기기 내 로컬 알림으로만 동작합니다. 알림 표시 시점은 iOS 시스템 일정에 따르며, 기기 설정·전원 상태에 따라 지연될 수 있습니다.</p>
     </div>
 
     <div class="section" data-app="honestcamera">
@@ -385,6 +398,7 @@
       <button data-filter="palette2048" onclick="filterApp('palette2048')">Palette 2048</button>
       <button data-filter="song2048" onclick="filterApp('song2048')">Song 2048</button>
       <button data-filter="tetsulog" onclick="filterApp('tetsulog')">Tetsulog</button>
+      <button data-filter="everykeep" onclick="filterApp('everykeep')">everykeep</button>
       <button data-filter="catscute" onclick="filterApp('catscute')">Cats are Cute</button>
       <button data-filter="catspop" onclick="filterApp('catspop')">Cats are Cute: Pop Time!</button>
       <button data-filter="james" onclick="filterApp('james')">James Series</button>
@@ -431,6 +445,10 @@
       <div class="app-block" data-app="tetsulog">
         <p class="sub-label">Tetsulog (鉄ログ)</p>
         <p>A "norizubu" (乗りつぶし) tracker that visualizes Japan's rail network and lets riders log every station they visit. Ships with ~370 lines and 7,000+ stations covering the 6 JR group companies plus Tokyo Metro, Toei, Hankyu, Hanshin, Keihan, Kintetsu, Nankai, Meitetsu, Nishitetsu and other major operators (37 companies in total). Shows progress as partial-segment coloring on actual track geometry, plus a station stamp book, activity calendar, and 47-prefecture heatmap.</p>
+      </div>
+      <div class="app-block" data-app="everykeep">
+        <p class="sub-label">everykeep</p>
+        <p>A home upkeep app that records replacement and cleaning cycles, warranty periods, and product registrations for every item in your home, and reminds you in time. It offers lifespan gauges, weekly and monthly calendars, replacement history, and storage for receipt and warranty photos. All data is stored only on your device.</p>
       </div>
       <div class="app-block" data-app="catscute">
         <p class="sub-label">Cats are Cute</p>
@@ -548,6 +566,14 @@
       <p>Local Link's role is limited to passing your selected query through iOS URL schemes / deep links to the map app or web map page you choose. How each destination map app or web service processes and displays your search result is the responsibility of that provider, and we are not liable for it.</p>
       <p class="sub-label">Search Result Accuracy</p>
       <p>We make efforts to keep alias dictionaries and recommended place data accurate, but we do not guarantee completeness, accuracy, or timeliness of every result. Actual location information depends on the data provided by the map app or web service you choose.</p>
+    </div>
+    <div class="section" data-app="everykeep">
+      <h2>Free Use (everykeep)</h2>
+      <p>everykeep is a free app with no advertising, no subscriptions, and no in-app purchases. No account registration is required.</p>
+      <p class="sub-label">Data Processing</p>
+      <p>The product details you enter, the photos you attach, and your notification and preference settings are all stored only on your device (SwiftData store, app container, and UserDefaults). They are not transmitted or synced to our servers or any external service, and are removed when you uninstall the app. See the <a href="https://kkiruk-studio.github.io/privacy-policy-app/" target="_blank" class="email">Privacy Policy</a> for details.</p>
+      <p class="sub-label">Notifications</p>
+      <p>Replacement, cleaning, and warranty reminders run as on-device local notifications only. Their timing follows the iOS system schedule and may be delayed depending on device settings and power state.</p>
     </div>
 
     <div class="section" data-app="honestcamera">
