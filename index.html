@@ -84,6 +84,7 @@
       <button data-filter="tetsulog" onclick="filterApp('tetsulog')">테츠로그</button>
       <button data-filter="everykeep" onclick="filterApp('everykeep')">everykeep</button>
       <button data-filter="salarycharm" onclick="filterApp('salarycharm')">직장인 부적</button>
+      <button data-filter="deskbreath" onclick="filterApp('deskbreath')">DeskBreath</button>
       <button data-filter="catscute" onclick="filterApp('catscute')">고양이는 정말 귀여워</button>
       <button data-filter="catspop" onclick="filterApp('catspop')">고양이는 정말 팡팡</button>
       <button data-filter="james" onclick="filterApp('james')">James 시리즈</button>
@@ -138,6 +139,10 @@
       <div class="app-block" data-app="salarycharm">
         <p class="sub-label">직장인 부적</p>
         <p>매일 아침 사자성어 부적 한 장을 받아 지니거나 태우고, 동료에게도 이름을 적어 부적을 선물할 수 있는 앱. 받은 부적은 홈과 위젯에 표시되며 하루가 끝나면 태워 없어집니다.</p>
+      </div>
+      <div class="app-block" data-app="deskbreath">
+        <p class="sub-label">DeskBreath</p>
+        <p>업무 중 호흡을 깊게 하고 자세를 풀도록 부드럽게 알려주는 ambient 호흡·스트레칭 리마인더 (iOS·macOS). 업무 세션 중 작은 호흡 오브와 주기적 스트레칭 알림을 제공합니다.</p>
       </div>
       <div class="app-block" data-app="catscute">
         <p class="sub-label">고양이는 정말 귀여워 (Cats are Cute)</p>
@@ -283,6 +288,16 @@
       <p>사용자가 "평일 부적 알림"을 켜면 평일 지정 시각에 로컬 알림이 표시됩니다. 알림은 기기 내에서만 처리되며 외부 서버로 전송되지 않습니다.</p>
     </div>
 
+    <div class="section" data-app="deskbreath">
+      <h2>DeskBreath 데이터 처리 · 결제</h2>
+      <p class="sub-label">로컬 저장</p>
+      <p>세션 통계(호흡·스트레칭 횟수, 연속일)와 설정값은 기기 내 저장소에만 저장됩니다. 당사 서버로 전송되지 않으며, 앱을 삭제하면 함께 제거됩니다. Pro 이용자가 iCloud 동기화를 켜면 설정·통계가 본인 iCloud 계정을 통해 기기 간에만 동기화됩니다.</p>
+      <p class="sub-label">유료 구매</p>
+      <p>DeskBreath Pro는 Apple App Store를 통한 일회성(비소모성) 인앱 구매입니다. 구독이 아니며 결제·복원·환불은 App Store 정책을 따릅니다. 당사는 결제 정보를 수집하지 않습니다.</p>
+      <p class="sub-label">알림</p>
+      <p>사용자가 권한을 허용하면 업무 세션 중 설정한 주기로 스트레칭 로컬 알림이 표시됩니다. 알림은 기기 내에서만 처리되며 외부 서버로 전송되지 않습니다.</p>
+    </div>
+
     <div class="section" data-app="honestcamera">
       <h2>일회성 유료 (Honest Camera)</h2>
       <table>
@@ -423,6 +438,7 @@
       <button data-filter="tetsulog" onclick="filterApp('tetsulog')">Tetsulog</button>
       <button data-filter="everykeep" onclick="filterApp('everykeep')">everykeep</button>
       <button data-filter="salarycharm" onclick="filterApp('salarycharm')">Salary Charm</button>
+      <button data-filter="deskbreath" onclick="filterApp('deskbreath')">DeskBreath</button>
       <button data-filter="catscute" onclick="filterApp('catscute')">Cats are Cute</button>
       <button data-filter="catspop" onclick="filterApp('catspop')">Cats are Cute: Pop Time!</button>
       <button data-filter="james" onclick="filterApp('james')">James Series</button>
@@ -477,6 +493,10 @@
       <div class="app-block" data-app="salarycharm">
         <p class="sub-label">Salary Charm</p>
         <p>A daily app where you receive one four-character-idiom charm each morning to keep or burn, and can gift a charm to a coworker by entering their name. A kept charm appears on the home screen and widget, and is burned away at the end of the day.</p>
+      </div>
+      <div class="app-block" data-app="deskbreath">
+        <p class="sub-label">DeskBreath</p>
+        <p>An ambient breathing and stretch reminder that gently nudges you to breathe deeper and move while working (iOS and macOS). It shows a small breathing orb during work sessions and periodic stretch reminders.</p>
       </div>
       <div class="app-block" data-app="catscute">
         <p class="sub-label">Cats are Cute</p>
@@ -620,6 +640,16 @@
       <p>The in-app subscription (Pro) is an auto-renewing purchase through the Apple App Store. Payment, renewal, cancellation, and refunds are managed in your device's App Store settings; we do not collect payment information.</p>
       <p class="sub-label">Notifications</p>
       <p>When you enable "Weekday Charm Reminder," local notifications appear at the set time on weekdays. They are processed entirely on-device and are never transmitted to external servers.</p>
+    </div>
+
+    <div class="section" data-app="deskbreath">
+      <h2>DeskBreath Data Handling &amp; Payment</h2>
+      <p class="sub-label">Local Storage</p>
+      <p>Your session stats (breath and stretch counts, day streak) and settings are stored only on your device. They are not transmitted to our servers and are removed when you uninstall the app. If a Pro user turns on iCloud sync, settings and stats are synced only across that user's own devices through their iCloud account.</p>
+      <p class="sub-label">Purchase</p>
+      <p>DeskBreath Pro is a one-time (non-consumable) in-app purchase through the Apple App Store. It is not a subscription; payment, restore, and refunds follow App Store policy. We do not collect payment information.</p>
+      <p class="sub-label">Notifications</p>
+      <p>When you grant permission, stretch local notifications appear at your chosen interval during a work session. They are processed entirely on-device and are never transmitted to external servers.</p>
     </div>
 
     <div class="section" data-app="honestcamera">
