@@ -81,6 +81,7 @@
       <button data-filter="findlocal" onclick="filterApp('findlocal')">Local Link</button>
       <button data-filter="palette2048" onclick="filterApp('palette2048')">Palette</button>
       <button data-filter="song2048" onclick="filterApp('song2048')">Song 2048</button>
+      <button data-filter="quote2048" onclick="filterApp('quote2048')">Quote 2048</button>
       <button data-filter="tetsulog" onclick="filterApp('tetsulog')">테츠로그</button>
       <button data-filter="everykeep" onclick="filterApp('everykeep')">everykeep</button>
       <button data-filter="salarycharm" onclick="filterApp('salarycharm')">직장인 부적</button>
@@ -128,6 +129,10 @@
         <p class="sub-label">Song 2048: Album Art Puzzle</p>
         <p>매일 유명 앨범 커버에서 추출한 색 팔레트로 즐기는 2048 퍼즐 게임. 퍼즐을 푼 뒤 Play 버튼으로 해당 앨범을 사용자가 선택한 스트리밍 서비스에서 바로 들을 수 있습니다.</p>
       </div>
+      <div class="app-block" data-app="quote2048">
+        <p class="sub-label">Quote 2048</p>
+        <p>명언과 격언을 문장 타일로 병합하는 2048 퍼즐 게임. 순한 속담부터 왕관 명언까지, 테마별로 큐레이션된 퍼블릭 도메인 명언·명화를 배경으로 문장을 완성합니다.</p>
+      </div>
       <div class="app-block" data-app="tetsulog">
         <p class="sub-label">테츠로그 (鉄ログ / Tetsulog)</p>
         <p>일본 전국 철도 노선·역을 시각화하고 방문 기록을 모으는 乗りつぶ(노리츠부) 트래커. JR 그룹 6사 + 도쿄메트로·도에이·한큐·한신·게이한·긴테쓰·난카이·메이테쓰·니시테쓰 등 37 회사 / 약 370 노선 / 7,000+ 역을 내장. 부분 구간 컬러링으로 진행률 시각화, 역 스탬프 수첩, 활동 기록 / 47도도부현 히트맵을 제공.</p>
@@ -160,7 +165,7 @@
 
     <div class="section" data-app="all">
       <h2>서비스 이용</h2>
-      <p>당사 앱들은 다양한 수익 모델을 사용합니다. 일부 앱(Pinclip, 어제보다, Sidefeed, Palette, Song 2048, 테츠로그)은 무료 기능과 유료(Pro) 기능을 제공하며, Talk Memo·Honest Camera와 같이 일회성 유료 앱은 한 번의 결제로 모든 기능을 제공합니다. 테츠로그는 추가로 평생 이용권(일회성 결제) 옵션을 함께 제공합니다. Song 2048의 Pro는 일회성 구매이며(구독 아님), 앱에는 사용자가 선택하는 보상형 광고와 게임 사이 빈도 제한이 있는 전면 광고가 포함됩니다. 결제는 모두 Apple ID를 통해 처리됩니다.</p>
+      <p>당사 앱들은 다양한 수익 모델을 사용합니다. 일부 앱(Pinclip, 어제보다, Sidefeed, Palette, Song 2048, Quote 2048, 테츠로그)은 무료 기능과 유료(Pro) 기능을 제공하며, Talk Memo·Honest Camera와 같이 일회성 유료 앱은 한 번의 결제로 모든 기능을 제공합니다. 테츠로그는 추가로 평생 이용권(일회성 결제) 옵션을 함께 제공합니다. Song 2048과 Quote 2048의 Pro는 일회성 구매이며(구독 아님), Song 2048에는 추가로 사용자가 선택하는 보상형 광고와 게임 사이 빈도 제한이 있는 전면 광고가 포함됩니다. 결제는 모두 Apple ID를 통해 처리됩니다.</p>
     </div>
 
     <div class="section" data-app="pinclip thanyesterday sidefeed palette2048 tetsulog">
@@ -254,6 +259,20 @@
       <p>무료 이용자에게는 게임 사이사이에 빈도가 제한된 전면 광고가 표시될 수 있습니다. Song Pro를 구매하면 전면 광고를 포함한 모든 광고가 제거됩니다.</p>
       <p class="sub-label">콘텐츠 고지</p>
       <p>Song 2048은 음원을 재생하지 않으며, 커버에서 추출한 색 팔레트와 공개 메타데이터(앨범명, 아티스트명, 발매 연도)를 표시합니다. 앨범 커버 이미지는 Apple의 공개 iTunes Search API를 통해 Apple의 서버에서 실시간으로 불러와 검색·라이브러리 화면에 썸네일로 표시하며, 당사 서버에 저장·재배포하지 않습니다. 커버 이미지와 앨범·아티스트명의 권리는 각 권리자에게 있으며, 식별 및 해당 콘텐츠로의 연결 목적으로만 사용됩니다. 당사는 어떠한 아티스트·레이블과도 제휴·후원·보증 관계가 없습니다. Play 버튼은 사용자가 선택한 외부 스트리밍 서비스로 연결되며, 해당 서비스의 약관이 적용됩니다. 권리자께서 특정 콘텐츠의 표시 중단을 원하시는 경우 문의처로 요청해 주십시오.</p>
+      <p class="sub-label">결제 및 환불</p>
+      <p>결제는 Apple ID 계정을 통해 처리되며, 당사는 결제 정보를 수집·저장하지 않습니다. 다른 기기에서 이미 구매한 Pro는 앱 내 "구매 복원"으로 복원할 수 있습니다. 환불은 Apple의 환불 정책에 따르며, 환불 요청은 Apple에 직접 제출해야 합니다(<a href="https://reportaproblem.apple.com" target="_blank" class="email">reportaproblem.apple.com</a>).</p>
+    </div>
+
+    <div class="section" data-app="quote2048">
+      <h2>일회성 구매 및 데이터 처리 (Quote 2048)</h2>
+      <table>
+        <tr><td>Quote Pro (일회성)</td><td>US $2.99</td></tr>
+      </table>
+      <p class="note">Pro 혜택: 프리미엄 작가 컬렉션 잠금 해제, 언두 무제한, 전체 아카이브 접근, 커스텀 테마 팩 무제한, 토요일 리플레이. 구독이 아니며 자동 갱신·반복 결제가 없습니다. 표시 가격은 기준 가격이며, 실제 결제 금액은 App Store에서 사용자의 지역 및 통화에 따라 표시되는 금액을 따릅니다.</p>
+      <p class="sub-label">로컬 저장 및 iCloud 동기화</p>
+      <p>게임 진행 상황(현재 보드 상태, 테마 클리어·진행 상황, 베스트 점수, 연속 플레이 일수, 내 테마 팩, 설정)은 기기 내 UserDefaults 에 저장되며, 같은 Apple ID 의 다른 기기로 자동 동기화하기 위해 Apple iCloud Key-Value Store 에도 저장됩니다. 데이터는 Apple iCloud 인프라에 저장되며 당사 서버는 거치지 않습니다. iCloud 동기화는 iOS 설정에서 끌 수 있습니다.</p>
+      <p class="sub-label">콘텐츠 고지</p>
+      <p>Quote 2048에 수록된 명언·격언은 퍼블릭 도메인 출처를 기반으로 하며, 저자·출처를 표시합니다. 오귀속이 발견되는 경우 문의처로 알려주시면 확인 후 수정합니다.</p>
       <p class="sub-label">결제 및 환불</p>
       <p>결제는 Apple ID 계정을 통해 처리되며, 당사는 결제 정보를 수집·저장하지 않습니다. 다른 기기에서 이미 구매한 Pro는 앱 내 "구매 복원"으로 복원할 수 있습니다. 환불은 Apple의 환불 정책에 따르며, 환불 요청은 Apple에 직접 제출해야 합니다(<a href="https://reportaproblem.apple.com" target="_blank" class="email">reportaproblem.apple.com</a>).</p>
     </div>
@@ -436,6 +455,7 @@
       <button data-filter="findlocal" onclick="filterApp('findlocal')">Local Link</button>
       <button data-filter="palette2048" onclick="filterApp('palette2048')">Palette</button>
       <button data-filter="song2048" onclick="filterApp('song2048')">Song 2048</button>
+      <button data-filter="quote2048" onclick="filterApp('quote2048')">Quote 2048</button>
       <button data-filter="tetsulog" onclick="filterApp('tetsulog')">Tetsulog</button>
       <button data-filter="everykeep" onclick="filterApp('everykeep')">everykeep</button>
       <button data-filter="salarycharm" onclick="filterApp('salarycharm')">Salary Charm</button>
@@ -483,6 +503,10 @@
         <p class="sub-label">Song 2048: Album Art Puzzle</p>
         <p>A 2048 puzzle game where each day's board uses a color palette extracted from a famous album cover. After playing, the Play button opens that album in your chosen streaming service.</p>
       </div>
+      <div class="app-block" data-app="quote2048">
+        <p class="sub-label">Quote 2048</p>
+        <p>A 2048 puzzle game where you merge quote tiles instead of numbers — climbing from a humble proverb to a crown quote, set against public-domain quotes and paintings curated by theme.</p>
+      </div>
       <div class="app-block" data-app="tetsulog">
         <p class="sub-label">Tetsulog (鉄ログ)</p>
         <p>A "norizubu" (乗りつぶし) tracker that visualizes Japan's rail network and lets riders log every station they visit. Ships with ~370 lines and 7,000+ stations covering the 6 JR group companies plus Tokyo Metro, Toei, Hankyu, Hanshin, Keihan, Kintetsu, Nankai, Meitetsu, Nishitetsu and other major operators (37 companies in total). Shows progress as partial-segment coloring on actual track geometry, plus a station stamp book, activity calendar, and 47-prefecture heatmap.</p>
@@ -515,7 +539,7 @@
 
     <div class="section" data-app="all">
       <h2>Use of Services</h2>
-      <p>Our apps use various revenue models. Some apps (Pinclip, ThanYesterday, Sidefeed, Palette, Song 2048, Tetsulog) offer free features alongside paid (Pro) features, while others such as Talk Memo and Honest Camera are one-time paid apps where a single purchase unlocks all features. Tetsulog additionally offers a lifetime (one-time payment) unlock alongside its subscriptions. Song 2048's Pro is a one-time purchase (not a subscription), and the free version includes optional user-initiated rewarded ads plus frequency-capped interstitial ads between games. All payments are processed through Apple ID.</p>
+      <p>Our apps use various revenue models. Some apps (Pinclip, ThanYesterday, Sidefeed, Palette, Song 2048, Quote 2048, Tetsulog) offer free features alongside paid (Pro) features, while others such as Talk Memo and Honest Camera are one-time paid apps where a single purchase unlocks all features. Tetsulog additionally offers a lifetime (one-time payment) unlock alongside its subscriptions. Song 2048's and Quote 2048's Pro are one-time purchases (not subscriptions); Song 2048's free version additionally includes optional user-initiated rewarded ads plus frequency-capped interstitial ads between games. All payments are processed through Apple ID.</p>
     </div>
 
     <div class="section" data-app="pinclip thanyesterday sidefeed palette2048 tetsulog">
@@ -609,6 +633,20 @@
       <p>Free players may see frequency-capped interstitial ads between games. Purchasing Song Pro removes all ads, including interstitials.</p>
       <p class="sub-label">Content Notice</p>
       <p>Song 2048 does not play audio. It shows color palettes derived from cover art together with public metadata (album title, artist name, release year). Album cover images are loaded in real time from Apple's servers via Apple's public iTunes Search API and shown as thumbnails on the search and library screens; we do not store or redistribute them on our servers. Cover images, album titles, and artist names remain the property of their respective owners and are used only for identification and to link to that content. We are not affiliated with, sponsored by, or endorsed by any artist or label. The Play button links out to the streaming service you choose, whose own terms apply. If a rights holder wishes to have specific content removed from display, please contact us.</p>
+      <p class="sub-label">Payment and Refunds</p>
+      <p>Payment is charged through your Apple ID. We do not collect or store payment information. A Pro purchase made on another device can be restored via "Restore Purchase" in the app. Refunds are subject to Apple's refund policy and must be submitted directly to Apple (<a href="https://reportaproblem.apple.com" target="_blank" class="email">reportaproblem.apple.com</a>).</p>
+    </div>
+
+    <div class="section" data-app="quote2048">
+      <h2>One-Time Purchase &amp; Data Handling (Quote 2048)</h2>
+      <table>
+        <tr><td>Quote Pro (one-time)</td><td>US $2.99</td></tr>
+      </table>
+      <p class="note">Pro benefits: unlocks the premium author collection, unlimited undo, full archive access, unlimited custom theme packs, and Saturday replay. This is not a subscription — there is no auto-renewal and no recurring charge. Listed prices are reference prices; the actual amount charged follows the price displayed in the App Store for your region and currency.</p>
+      <p class="sub-label">Local Storage and iCloud Sync</p>
+      <p>Game progress (current board state, theme clear/progress status, best scores, daily-play streak, your custom theme packs, settings) is stored on your device in UserDefaults, and is also stored in your Apple iCloud Key-Value Store to sync automatically across devices signed in to the same Apple ID. Data lives on Apple's iCloud infrastructure and never passes through our servers. You can disable iCloud sync in iOS Settings.</p>
+      <p class="sub-label">Content Notice</p>
+      <p>Quotes and sayings included in Quote 2048 are drawn from public-domain sources, with author and source attribution shown. If you spot a misattribution, please let us know via the contact below and we will review and correct it.</p>
       <p class="sub-label">Payment and Refunds</p>
       <p>Payment is charged through your Apple ID. We do not collect or store payment information. A Pro purchase made on another device can be restored via "Restore Purchase" in the app. Refunds are subject to Apple's refund policy and must be submitted directly to Apple (<a href="https://reportaproblem.apple.com" target="_blank" class="email">reportaproblem.apple.com</a>).</p>
     </div>
