@@ -67,7 +67,7 @@
 
   <!-- 한국어 -->
   <div id="lang-ko" style="display:none;">
-    <p class="meta">시행일: 2026년 7월 7일 &middot; 개발사: kkiruk studio &middot; 문의: <span class="email" id="email-ko"></span></p>
+    <p class="meta">시행일: 2026년 7월 29일 &middot; 개발사: kkiruk studio &middot; 문의: <span class="email" id="email-ko"></span></p>
     <p class="intro">kkiruk studio(이하 "당사")가 운영하는 아래 앱들의 이용약관입니다. 앱을 다운로드하거나 사용함으로써 본 약관에 동의하는 것으로 간주합니다.</p>
     <p class="tab-label">앱별로 보기</p>
     <div class="app-tabs">
@@ -83,6 +83,7 @@
       <button data-filter="song2048" onclick="filterApp('song2048')">Song 2048</button>
       <button data-filter="quote2048" onclick="filterApp('quote2048')">Quote 2048</button>
       <button data-filter="tetsulog" onclick="filterApp('tetsulog')">테츠로그</button>
+      <button data-filter="raillog" onclick="filterApp('raillog')">레일로그</button>
       <button data-filter="nycsubwaylog" onclick="filterApp('nycsubwaylog')">NYC Subway Log</button>
       <button data-filter="everykeep" onclick="filterApp('everykeep')">everykeep</button>
       <button data-filter="salarycharm" onclick="filterApp('salarycharm')">직장인 부적</button>
@@ -138,6 +139,10 @@
         <p class="sub-label">테츠로그 (鉄ログ / Tetsulog)</p>
         <p>일본 전국 철도 노선·역을 시각화하고 방문 기록을 모으는 乗りつぶ(노리츠부) 트래커. JR 그룹 6사 + 도쿄메트로·도에이·한큐·한신·게이한·긴테쓰·난카이·메이테쓰·니시테쓰 등 37 회사 / 약 370 노선 / 7,000+ 역을 내장. 부분 구간 컬러링으로 진행률 시각화, 역 스탬프 수첩, 활동 기록 / 47도도부현 히트맵을 제공.</p>
       </div>
+      <div class="app-block" data-app="raillog">
+        <p class="sub-label">레일로그 (Raillog)</p>
+        <p>한국 전국 철도 노선·역을 시각화하고 승차 기록을 모으는 철도 답사 트래커. 코레일·수도권 도시철도·광역시 도시철도 등 17개 사업자 / 55개 노선을 내장. 부분 구간 컬러링으로 진행률 시각화, 역 스탬프북, 「전구간 완주」 인장 카드, 차량 도감, 활동 기록 / 17개 광역시도 히트맵을 제공.</p>
+      </div>
       <div class="app-block" data-app="nycsubwaylog">
         <p class="sub-label">NYC Subway Log</p>
         <p>뉴욕 지하철 완주(station bagging) 기록 앱. MTA 공개 GTFS 피드 기반으로 25개 서비스·475개 역 전체를 내장하며, 역마다 방문 체크·메모·사진을 남길 수 있습니다. 실제 선로 형상 위에 방문 구간을 노선색으로 칠해 진행률을 보여주고, 스탬프북·전 구간 완주 카드·5개 자치구 히트맵·차량 도감을 제공합니다. 본 앱은 독립 앱이며 MTA(Metropolitan Transportation Authority)와 제휴·후원 관계가 없습니다.</p>
@@ -170,10 +175,10 @@
 
     <div class="section" data-app="all">
       <h2>서비스 이용</h2>
-      <p>당사 앱들은 다양한 수익 모델을 사용합니다. 일부 앱(Pinclip, 어제보다, Sidefeed, Palette, Song 2048, Quote 2048, 테츠로그)은 무료 기능과 유료(Pro) 기능을 제공하며, Talk Memo·Honest Camera와 같이 일회성 유료 앱은 한 번의 결제로 모든 기능을 제공합니다. 테츠로그는 추가로 평생 이용권(일회성 결제) 옵션을 함께 제공합니다. Song 2048과 Quote 2048의 Pro는 일회성 구매이며(구독 아님), Song 2048에는 추가로 사용자가 선택하는 보상형 광고와 게임 사이 빈도 제한이 있는 전면 광고가 포함됩니다. 결제는 모두 Apple ID를 통해 처리됩니다.</p>
+      <p>당사 앱들은 다양한 수익 모델을 사용합니다. 일부 앱(Pinclip, 어제보다, Sidefeed, Palette, Song 2048, Quote 2048, 테츠로그, 레일로그)은 무료 기능과 유료(Pro) 기능을 제공하며, Talk Memo·Honest Camera와 같이 일회성 유료 앱은 한 번의 결제로 모든 기능을 제공합니다. 테츠로그와 레일로그는 추가로 평생 이용권(일회성 결제) 옵션을 함께 제공합니다. Song 2048과 Quote 2048의 Pro는 일회성 구매이며(구독 아님), Song 2048에는 추가로 사용자가 선택하는 보상형 광고와 게임 사이 빈도 제한이 있는 전면 광고가 포함됩니다. 결제는 모두 Apple ID를 통해 처리됩니다.</p>
     </div>
 
-    <div class="section" data-app="pinclip thanyesterday sidefeed palette2048 tetsulog">
+    <div class="section" data-app="pinclip thanyesterday sidefeed palette2048 tetsulog raillog">
       <h2>구독 및 결제</h2>
       <div class="app-block" data-app="thanyesterday">
         <p class="sub-label">구독 상품 (어제보다)</p>
@@ -215,6 +220,15 @@
           <tr><td>평생 이용권 (一括)</td><td>¥4,800 (일회성)</td></tr>
         </table>
         <p class="note">Pro 혜택: 즐겨찾기 무제한(무료 최대 5개 노선), 회사별 진행 차트와 활동 캘린더, 47도도부현 히트맵, 공유 카드 워터마크 제거, PDF 御朱印帳 출력(향후 제공). 무료 체험은 제공되지 않습니다. iCloud 동기화는 무료·Pro 구분 없이 모든 사용자에게 기본 제공됩니다(기기 변경·분실 시에도 방문 기록 보존을 위해 과금 대상에서 제외).</p>
+      </div>
+      <div class="app-block" data-app="raillog">
+        <p class="sub-label">구독·구매 상품 (레일로그 Pro)</p>
+        <table>
+          <tr><td>월간 구독</td><td>₩1,900/월</td></tr>
+          <tr><td>연간 구독</td><td>₩9,900/년 (월간 대비 약 57% 할인)</td></tr>
+          <tr><td>평생 이용권</td><td>₩19,000 (일회성)</td></tr>
+        </table>
+        <p class="note">Pro 혜택: 즐겨찾기 노선 무제한(무료 최대 5개 노선), 상세 통계와 17개 광역시도 히트맵, 공유 카드 워터마크 제거, 방문 스탬프를 A4로 출력하는 PDF 스탬프북. 무료 체험은 제공되지 않습니다. 평생 이용권은 자동 갱신이 없는 일회성 비소모성(non-consumable) 구매입니다. 노선 열람·승차 기록·스탬프북·iCloud 동기화는 무료·Pro 구분 없이 모든 이용자에게 제공됩니다(기기 변경·분실 시에도 기록 보존을 위해 과금 대상에서 제외).</p>
       </div>
       <div class="app-block" data-app="nycsubwaylog">
         <p class="sub-label">구독·구매 상품 (NYC Subway Log Pro)</p>
@@ -455,7 +469,7 @@
 
   <!-- English -->
   <div id="lang-en">
-    <p class="meta">Effective: July 7, 2026 &middot; Developer: kkiruk studio &middot; Contact: <span class="email" id="email-en"></span></p>
+    <p class="meta">Effective: July 29, 2026 &middot; Developer: kkiruk studio &middot; Contact: <span class="email" id="email-en"></span></p>
     <p class="intro">These Terms of Service govern your use of the apps operated by kkiruk studio ("we"). By downloading or using our apps, you agree to these terms.</p>
     <p class="tab-label">Filter by app</p>
     <div class="app-tabs">
@@ -471,6 +485,7 @@
       <button data-filter="song2048" onclick="filterApp('song2048')">Song 2048</button>
       <button data-filter="quote2048" onclick="filterApp('quote2048')">Quote 2048</button>
       <button data-filter="tetsulog" onclick="filterApp('tetsulog')">Tetsulog</button>
+      <button data-filter="raillog" onclick="filterApp('raillog')">Raillog</button>
       <button data-filter="nycsubwaylog" onclick="filterApp('nycsubwaylog')">NYC Subway Log</button>
       <button data-filter="everykeep" onclick="filterApp('everykeep')">everykeep</button>
       <button data-filter="salarycharm" onclick="filterApp('salarycharm')">Salary Charm</button>
@@ -526,6 +541,10 @@
         <p class="sub-label">Tetsulog (鉄ログ)</p>
         <p>A "norizubu" (乗りつぶし) tracker that visualizes Japan's rail network and lets riders log every station they visit. Ships with ~370 lines and 7,000+ stations covering the 6 JR group companies plus Tokyo Metro, Toei, Hankyu, Hanshin, Keihan, Kintetsu, Nankai, Meitetsu, Nishitetsu and other major operators (37 companies in total). Shows progress as partial-segment coloring on actual track geometry, plus a station stamp book, activity calendar, and 47-prefecture heatmap.</p>
       </div>
+      <div class="app-block" data-app="raillog">
+        <p class="sub-label">Raillog (레일로그)</p>
+        <p>A tracker for visualizing South Korea's railway lines and stations and collecting your ride records. Ships with 17 operators / 55 lines (KORAIL, Seoul Metropolitan Subway, and metropolitan-city subways). Provides partial-section coloring for progress, a station stamp book, full-line completion cards, a rolling-stock catalog, and an activity log / 17-region heatmap.</p>
+      </div>
       <div class="app-block" data-app="nycsubwaylog">
         <p class="sub-label">NYC Subway Log</p>
         <p>A station-bagging tracker for the New York City Subway. Ships with all 25 services and 475 stations from the MTA's public GTFS feed, and lets riders mark each station visited with notes and photos. Progress is drawn as line-coloured segments over real track geometry, alongside a stamp book, line-completion cards, a five-borough heatmap, and a rolling-stock book. This is an independent app and is not affiliated with, endorsed by, or sponsored by the Metropolitan Transportation Authority.</p>
@@ -558,10 +577,10 @@
 
     <div class="section" data-app="all">
       <h2>Use of Services</h2>
-      <p>Our apps use various revenue models. Some apps (Pinclip, ThanYesterday, Sidefeed, Palette, Song 2048, Quote 2048, Tetsulog) offer free features alongside paid (Pro) features, while others such as Talk Memo and Honest Camera are one-time paid apps where a single purchase unlocks all features. Tetsulog additionally offers a lifetime (one-time payment) unlock alongside its subscriptions. Song 2048's and Quote 2048's Pro are one-time purchases (not subscriptions); Song 2048's free version additionally includes optional user-initiated rewarded ads plus frequency-capped interstitial ads between games. All payments are processed through Apple ID.</p>
+      <p>Our apps use various revenue models. Some apps (Pinclip, ThanYesterday, Sidefeed, Palette, Song 2048, Quote 2048, Tetsulog, Raillog) offer free features alongside paid (Pro) features, while others such as Talk Memo and Honest Camera are one-time paid apps where a single purchase unlocks all features. Tetsulog and Raillog additionally offer a lifetime (one-time payment) unlock alongside their subscriptions. Song 2048's and Quote 2048's Pro are one-time purchases (not subscriptions); Song 2048's free version additionally includes optional user-initiated rewarded ads plus frequency-capped interstitial ads between games. All payments are processed through Apple ID.</p>
     </div>
 
-    <div class="section" data-app="pinclip thanyesterday sidefeed palette2048 tetsulog">
+    <div class="section" data-app="pinclip thanyesterday sidefeed palette2048 tetsulog raillog">
       <h2>Subscriptions and Payment</h2>
       <div class="app-block" data-app="thanyesterday">
         <p class="sub-label">Subscription Plans (ThanYesterday)</p>
@@ -603,6 +622,15 @@
           <tr><td>Lifetime (one-time)</td><td>¥4,800</td></tr>
         </table>
         <p class="note">Pro benefits: unlimited favorites (free plan: up to 5 lines), per-operator progress charts and activity calendar, 47-prefecture heatmap, watermark-free share cards, PDF 御朱印帳 export (coming soon). No free trial is offered. iCloud sync is available to all users (both free and Pro) — visit records are considered essential data that must survive device changes or loss, and are therefore never gated.</p>
+      </div>
+      <div class="app-block" data-app="raillog">
+        <p class="sub-label">Subscription &amp; Purchase (Raillog Pro)</p>
+        <table>
+          <tr><td>Monthly subscription</td><td>₩1,900/month</td></tr>
+          <tr><td>Yearly subscription</td><td>₩9,900/year (about 57% off the monthly rate)</td></tr>
+          <tr><td>Lifetime unlock</td><td>₩19,000 (one-time)</td></tr>
+        </table>
+        <p class="note">Pro benefits: unlimited favorite lines (free tier allows up to 5), detailed statistics and the 17-region heatmap, watermark removal on share cards, and an A4 PDF stamp book of your station stamps. No free trial is offered. The lifetime unlock is a one-time non-consumable purchase with no auto-renewal. Browsing lines, recording rides, the stamp book, and iCloud sync are available to all users regardless of Pro (excluded from paid features so records survive device changes or loss).</p>
       </div>
       <div class="app-block" data-app="nycsubwaylog">
         <p class="sub-label">Subscription &amp; Purchase (NYC Subway Log Pro)</p>
