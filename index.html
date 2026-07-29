@@ -83,6 +83,7 @@
       <button data-filter="song2048" onclick="filterApp('song2048')">Song 2048</button>
       <button data-filter="quote2048" onclick="filterApp('quote2048')">Quote 2048</button>
       <button data-filter="tetsulog" onclick="filterApp('tetsulog')">테츠로그</button>
+      <button data-filter="nycsubwaylog" onclick="filterApp('nycsubwaylog')">NYC Subway Log</button>
       <button data-filter="everykeep" onclick="filterApp('everykeep')">everykeep</button>
       <button data-filter="salarycharm" onclick="filterApp('salarycharm')">직장인 부적</button>
       <button data-filter="deskbreath" onclick="filterApp('deskbreath')">DeskBreath</button>
@@ -136,6 +137,10 @@
       <div class="app-block" data-app="tetsulog">
         <p class="sub-label">테츠로그 (鉄ログ / Tetsulog)</p>
         <p>일본 전국 철도 노선·역을 시각화하고 방문 기록을 모으는 乗りつぶ(노리츠부) 트래커. JR 그룹 6사 + 도쿄메트로·도에이·한큐·한신·게이한·긴테쓰·난카이·메이테쓰·니시테쓰 등 37 회사 / 약 370 노선 / 7,000+ 역을 내장. 부분 구간 컬러링으로 진행률 시각화, 역 스탬프 수첩, 활동 기록 / 47도도부현 히트맵을 제공.</p>
+      </div>
+      <div class="app-block" data-app="nycsubwaylog">
+        <p class="sub-label">NYC Subway Log</p>
+        <p>뉴욕 지하철 완주(station bagging) 기록 앱. MTA 공개 GTFS 피드 기반으로 25개 서비스·475개 역 전체를 내장하며, 역마다 방문 체크·메모·사진을 남길 수 있습니다. 실제 선로 형상 위에 방문 구간을 노선색으로 칠해 진행률을 보여주고, 스탬프북·전 구간 완주 카드·5개 자치구 히트맵·차량 도감을 제공합니다. 본 앱은 독립 앱이며 MTA(Metropolitan Transportation Authority)와 제휴·후원 관계가 없습니다.</p>
       </div>
       <div class="app-block" data-app="everykeep">
         <p class="sub-label">everykeep</p>
@@ -210,6 +215,15 @@
           <tr><td>평생 이용권 (一括)</td><td>¥4,800 (일회성)</td></tr>
         </table>
         <p class="note">Pro 혜택: 즐겨찾기 무제한(무료 최대 5개 노선), 회사별 진행 차트와 활동 캘린더, 47도도부현 히트맵, 공유 카드 워터마크 제거, PDF 御朱印帳 출력(향후 제공). 무료 체험은 제공되지 않습니다. iCloud 동기화는 무료·Pro 구분 없이 모든 사용자에게 기본 제공됩니다(기기 변경·분실 시에도 방문 기록 보존을 위해 과금 대상에서 제외).</p>
+      </div>
+      <div class="app-block" data-app="nycsubwaylog">
+        <p class="sub-label">구독·구매 상품 (NYC Subway Log Pro)</p>
+        <table>
+          <tr><td>월간 구독</td><td>US$1.99/월</td></tr>
+          <tr><td>연간 구독</td><td>US$9.99/년 (월간 대비 약 58% 할인)</td></tr>
+          <tr><td>평생 이용권</td><td>US$19.99 (일회성)</td></tr>
+        </table>
+        <p class="note">Pro 혜택: 즐겨찾기 무제한(무료 최대 5개 노선), 계통별 진행 차트와 활동 캘린더, 5개 자치구 히트맵, 공유 카드 워터마크 제거, PDF 스탬프북 출력. 무료 체험은 제공되지 않습니다. iCloud 동기화는 무료·Pro 구분 없이 모든 사용자에게 기본 제공됩니다(기기 변경·분실 시에도 방문 기록 보존을 위해 과금 대상에서 제외). 가격은 미국 스토어 기준이며 국가별로 Apple 이 정한 등가 가격이 적용됩니다.</p>
       </div>
       <div class="app-block" data-app="salarycharm">
         <p class="sub-label">무제한 이용권 (직장인 부적)</p>
@@ -457,6 +471,7 @@
       <button data-filter="song2048" onclick="filterApp('song2048')">Song 2048</button>
       <button data-filter="quote2048" onclick="filterApp('quote2048')">Quote 2048</button>
       <button data-filter="tetsulog" onclick="filterApp('tetsulog')">Tetsulog</button>
+      <button data-filter="nycsubwaylog" onclick="filterApp('nycsubwaylog')">NYC Subway Log</button>
       <button data-filter="everykeep" onclick="filterApp('everykeep')">everykeep</button>
       <button data-filter="salarycharm" onclick="filterApp('salarycharm')">Salary Charm</button>
       <button data-filter="deskbreath" onclick="filterApp('deskbreath')">DeskBreath</button>
@@ -510,6 +525,10 @@
       <div class="app-block" data-app="tetsulog">
         <p class="sub-label">Tetsulog (鉄ログ)</p>
         <p>A "norizubu" (乗りつぶし) tracker that visualizes Japan's rail network and lets riders log every station they visit. Ships with ~370 lines and 7,000+ stations covering the 6 JR group companies plus Tokyo Metro, Toei, Hankyu, Hanshin, Keihan, Kintetsu, Nankai, Meitetsu, Nishitetsu and other major operators (37 companies in total). Shows progress as partial-segment coloring on actual track geometry, plus a station stamp book, activity calendar, and 47-prefecture heatmap.</p>
+      </div>
+      <div class="app-block" data-app="nycsubwaylog">
+        <p class="sub-label">NYC Subway Log</p>
+        <p>A station-bagging tracker for the New York City Subway. Ships with all 25 services and 475 stations from the MTA's public GTFS feed, and lets riders mark each station visited with notes and photos. Progress is drawn as line-coloured segments over real track geometry, alongside a stamp book, line-completion cards, a five-borough heatmap, and a rolling-stock book. This is an independent app and is not affiliated with, endorsed by, or sponsored by the Metropolitan Transportation Authority.</p>
       </div>
       <div class="app-block" data-app="everykeep">
         <p class="sub-label">everykeep</p>
@@ -584,6 +603,15 @@
           <tr><td>Lifetime (one-time)</td><td>¥4,800</td></tr>
         </table>
         <p class="note">Pro benefits: unlimited favorites (free plan: up to 5 lines), per-operator progress charts and activity calendar, 47-prefecture heatmap, watermark-free share cards, PDF 御朱印帳 export (coming soon). No free trial is offered. iCloud sync is available to all users (both free and Pro) — visit records are considered essential data that must survive device changes or loss, and are therefore never gated.</p>
+      </div>
+      <div class="app-block" data-app="nycsubwaylog">
+        <p class="sub-label">Subscription &amp; Purchase (NYC Subway Log Pro)</p>
+        <table>
+          <tr><td>Monthly</td><td>US$1.99/month</td></tr>
+          <tr><td>Yearly</td><td>US$9.99/year (~58% off vs monthly)</td></tr>
+          <tr><td>Lifetime (one-time)</td><td>US$19.99</td></tr>
+        </table>
+        <p class="note">Pro benefits: unlimited favorites (free plan: up to 5 lines), per-trunk progress charts and activity calendar, five-borough heatmap, watermark-free share cards, PDF stamp book export. No free trial is offered. iCloud sync is available to all users (both free and Pro) — visit records are considered essential data that must survive device changes or loss, and are therefore never gated. Prices shown are US App Store prices; Apple's equivalent local pricing applies in other storefronts.</p>
       </div>
       <div class="app-block" data-app="salarycharm">
         <p class="sub-label">Unlimited Unlock (Salary Charm)</p>
