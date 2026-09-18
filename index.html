@@ -18,6 +18,25 @@
   .intro { font-size: 14px; color: #555; margin-bottom: 1.5rem; line-height: 1.7; }
   .tab-label { font-size: 11px; color: #999; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
   .app-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+
+  /* ── 앱별 구분 강화 (2026-09-18) — privacy 와 동일한 이유·규칙 ── */
+  .app-tabs { position: sticky; top: 0; z-index: 20; background: #fff; padding: 8px 0; }
+  .app-block { margin-bottom: 1rem; border: 1px solid #e8e8e8; border-radius: 10px; padding: 12px 14px; background: #fcfcfc; }
+  .app-block > .sub-label { font-size: 13px; font-weight: 700; color: #1a1a1a; margin: 0 0 8px; padding-bottom: 6px; border-bottom: 1px solid #eee; letter-spacing: -0.1px; }
+  .app-block .sub-label::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #1a1a1a; margin-right: 7px; vertical-align: middle; }
+  .scope-banner { display: none; border: 1px solid #1a1a1a; border-radius: 10px; padding: 11px 14px; margin-bottom: 1.5rem; font-size: 13px; line-height: 1.6; color: #1a1a1a; background: #f6f6f6; }
+  .scope-banner.on { display: block; }
+  .scope-banner b { font-weight: 700; }
+  .scope-banner a { color: #1a1a1a; text-decoration: underline; margin-left: 6px; }
+  @media (prefers-color-scheme: dark) {
+    .app-tabs { background: #111; }
+    .app-block { border-color: #333; background: #161616; }
+    .app-block > .sub-label { color: #e5e5e5; border-bottom-color: #2a2a2a; }
+    .app-block .sub-label::before { background: #e5e5e5; }
+    .scope-banner { border-color: #e5e5e5; background: #1c1c1c; color: #e5e5e5; }
+    .scope-banner a { color: #e5e5e5; }
+  }
+
   .section { border-left: 2px solid #e5e5e5; padding-left: 1rem; margin-bottom: 2rem; }
   .section h2 { font-size: 15px; font-weight: 600; margin-bottom: 1rem; }
   .section p { font-size: 14px; color: #555; line-height: 1.75; margin-bottom: 1rem; }
@@ -67,7 +86,7 @@
 
   <!-- 한국어 -->
   <div id="lang-ko" style="display:none;">
-    <p class="meta">시행일: 2026년 7월 7일 &middot; 개발사: kkiruk studio &middot; 문의: <span class="email" id="email-ko"></span></p>
+    <p class="meta">시행일: 2026년 7월 29일 &middot; 개발사: kkiruk studio &middot; 문의: <span class="email" id="email-ko"></span></p>
     <p class="intro">kkiruk studio(이하 "당사")가 운영하는 아래 앱들의 이용약관입니다. 앱을 다운로드하거나 사용함으로써 본 약관에 동의하는 것으로 간주합니다.</p>
     <p class="tab-label">앱별로 보기</p>
     <div class="app-tabs">
@@ -78,19 +97,23 @@
       <button data-filter="sidefeed" onclick="filterApp('sidefeed')">Sidefeed</button>
       <button data-filter="talkmemo" onclick="filterApp('talkmemo')">Talk Memo</button>
       <button data-filter="honestcamera" onclick="filterApp('honestcamera')">Honest Camera</button>
+      <button data-filter="cuttogether" onclick="filterApp('cuttogether')">CutTogether</button>
       <button data-filter="findlocal" onclick="filterApp('findlocal')">Local Link</button>
       <button data-filter="palette2048" onclick="filterApp('palette2048')">Palette</button>
       <button data-filter="song2048" onclick="filterApp('song2048')">Song 2048</button>
       <button data-filter="quote2048" onclick="filterApp('quote2048')">Quote 2048</button>
       <button data-filter="tetsulog" onclick="filterApp('tetsulog')">테츠로그</button>
+      <button data-filter="raillog" onclick="filterApp('raillog')">레일로그</button>
       <button data-filter="nycsubwaylog" onclick="filterApp('nycsubwaylog')">NYC Subway Log</button>
       <button data-filter="everykeep" onclick="filterApp('everykeep')">everykeep</button>
       <button data-filter="salarycharm" onclick="filterApp('salarycharm')">직장인 부적</button>
       <button data-filter="deskbreath" onclick="filterApp('deskbreath')">DeskBreath</button>
+      <button data-filter="offwork" onclick="filterApp('offwork')">Offwork</button>
       <button data-filter="catscute" onclick="filterApp('catscute')">고양이는 정말 귀여워</button>
       <button data-filter="catspop" onclick="filterApp('catspop')">고양이는 정말 팡팡</button>
       <button data-filter="james" onclick="filterApp('james')">James 시리즈</button>
     </div>
+    <div class="scope-banner" data-lang="ko"></div>
 
     <div class="section" data-app="all">
       <h2>서비스 개요</h2>
@@ -118,6 +141,10 @@
         <p class="sub-label">Honest Camera</p>
         <p>3세 이상 유아를 위한 단일 셔터 카메라 앱. 모드 전환·갤러리·설정 메뉴 없이 셔터 한 개로 촬영하고 사진은 사진 보관함에 자동 저장됩니다.</p>
       </div>
+      <div class="app-block" data-app="cuttogether">
+        <p class="sub-label">CutTogether</p>
+        <p>사진 속 사람·반려동물·물건을 기기 안에서 오려내 한 장의 스크랩북 포스터로 모으는 앱. 일회성 구매 CutTogether Pro 를 통해 물건 오리기, 인화 크기 저장, 배경 없는 저장, 추가 종이·테두리를 사용할 수 있습니다.</p>
+      </div>
       <div class="app-block" data-app="findlocal">
         <p class="sub-label">Local Link / 로컬링크</p>
         <p>여행지 장소 이름을 발음·로마자·현지 문자 등 어떤 표기로 입력해도, 그 나라에서 실제로 쓰는 지도 앱(네이버·카카오·고덕·구글·애플)으로 바로 이동시키는 검색 유틸리티. 한국·중국·대만·일본·태국·베트남·홍콩·마카오 8개국 + 약 2,800개 장소·역·공항·터미널 별칭 내장.</p>
@@ -138,6 +165,10 @@
         <p class="sub-label">테츠로그 (鉄ログ / Tetsulog)</p>
         <p>일본 전국 철도 노선·역을 시각화하고 방문 기록을 모으는 乗りつぶ(노리츠부) 트래커. JR 그룹 6사 + 도쿄메트로·도에이·한큐·한신·게이한·긴테쓰·난카이·메이테쓰·니시테쓰 등 37 회사 / 약 370 노선 / 7,000+ 역을 내장. 부분 구간 컬러링으로 진행률 시각화, 역 스탬프 수첩, 활동 기록 / 47도도부현 히트맵을 제공.</p>
       </div>
+      <div class="app-block" data-app="raillog">
+        <p class="sub-label">레일로그 (Raillog)</p>
+        <p>한국 전국 철도 노선·역을 시각화하고 승차 기록을 모으는 철도 답사 트래커. 코레일·수도권 도시철도·광역시 도시철도 등 17개 사업자 / 55개 노선을 내장. 부분 구간 컬러링으로 진행률 시각화, 역 스탬프북, 「전구간 완주」 인장 카드, 차량 도감, 활동 기록 / 17개 광역시도 히트맵을 제공.</p>
+      </div>
       <div class="app-block" data-app="nycsubwaylog">
         <p class="sub-label">NYC Subway Log</p>
         <p>뉴욕 지하철 완주(station bagging) 기록 앱. MTA 공개 GTFS 피드 기반으로 25개 서비스·475개 역 전체를 내장하며, 역마다 방문 체크·메모·사진을 남길 수 있습니다. 실제 선로 형상 위에 방문 구간을 노선색으로 칠해 진행률을 보여주고, 스탬프북·전 구간 완주 카드·5개 자치구 히트맵·차량 도감을 제공합니다. 본 앱은 독립 앱이며 MTA(Metropolitan Transportation Authority)와 제휴·후원 관계가 없습니다.</p>
@@ -153,6 +184,10 @@
       <div class="app-block" data-app="deskbreath">
         <p class="sub-label">DeskBreath</p>
         <p>업무 중 호흡을 깊게 하고 자세를 풀도록 부드럽게 알려주는 ambient 호흡·스트레칭 리마인더 (iOS·macOS). 업무 세션 중 작은 호흡 오브와 주기적 스트레칭 알림을 제공합니다.</p>
+      </div>
+      <div class="app-block" data-app="offwork">
+        <p class="sub-label">Offwork</p>
+        <p>직장에서 겪은 일을 익명으로 나누고, 작성자가 정한 객관식 반응으로만 참여하는 커뮤니티입니다. 자유 댓글, DM, 팔로우, 공개 프로필은 제공하지 않습니다.</p>
       </div>
       <div class="app-block" data-app="catscute">
         <p class="sub-label">고양이는 정말 귀여워 (Cats are Cute)</p>
@@ -170,10 +205,10 @@
 
     <div class="section" data-app="all">
       <h2>서비스 이용</h2>
-      <p>당사 앱들은 다양한 수익 모델을 사용합니다. 일부 앱(Pinclip, 어제보다, Sidefeed, Palette, Song 2048, Quote 2048, 테츠로그)은 무료 기능과 유료(Pro) 기능을 제공하며, Talk Memo·Honest Camera와 같이 일회성 유료 앱은 한 번의 결제로 모든 기능을 제공합니다. 테츠로그는 추가로 평생 이용권(일회성 결제) 옵션을 함께 제공합니다. Song 2048과 Quote 2048의 Pro는 일회성 구매이며(구독 아님), Song 2048에는 추가로 사용자가 선택하는 보상형 광고와 게임 사이 빈도 제한이 있는 전면 광고가 포함됩니다. 결제는 모두 Apple ID를 통해 처리됩니다.</p>
+      <p>당사 앱들은 다양한 수익 모델을 사용합니다. 일부 앱(Pinclip, 어제보다, Sidefeed, Palette, Song 2048, Quote 2048, 테츠로그, 레일로그, NYC Subway Log)은 무료 기능과 유료(Pro) 기능을 제공하며, Talk Memo·Honest Camera와 같이 일회성 유료 앱은 한 번의 결제로 모든 기능을 제공합니다. 테츠로그·레일로그·NYC Subway Log는 추가로 평생 이용권(일회성 결제) 옵션을 함께 제공합니다. Song 2048과 Quote 2048의 Pro는 일회성 구매이며(구독 아님), Song 2048에는 추가로 사용자가 선택하는 보상형 광고와 게임 사이 빈도 제한이 있는 전면 광고가 포함됩니다. 결제는 모두 Apple ID를 통해 처리됩니다.</p>
     </div>
 
-    <div class="section" data-app="pinclip thanyesterday sidefeed palette2048 tetsulog">
+    <div class="section" data-app="pinclip thanyesterday sidefeed palette2048 tetsulog raillog nycsubwaylog">
       <h2>구독 및 결제</h2>
       <div class="app-block" data-app="thanyesterday">
         <p class="sub-label">구독 상품 (어제보다)</p>
@@ -215,6 +250,15 @@
           <tr><td>평생 이용권 (一括)</td><td>¥4,800 (일회성)</td></tr>
         </table>
         <p class="note">Pro 혜택: 즐겨찾기 무제한(무료 최대 5개 노선), 회사별 진행 차트와 활동 캘린더, 47도도부현 히트맵, 공유 카드 워터마크 제거, PDF 御朱印帳 출력(향후 제공). 무료 체험은 제공되지 않습니다. iCloud 동기화는 무료·Pro 구분 없이 모든 사용자에게 기본 제공됩니다(기기 변경·분실 시에도 방문 기록 보존을 위해 과금 대상에서 제외).</p>
+      </div>
+      <div class="app-block" data-app="raillog">
+        <p class="sub-label">구독·구매 상품 (레일로그 Pro)</p>
+        <table>
+          <tr><td>월간 구독</td><td>₩1,900/월</td></tr>
+          <tr><td>연간 구독</td><td>₩9,900/년 (월간 대비 약 57% 할인)</td></tr>
+          <tr><td>평생 이용권</td><td>₩19,000 (일회성)</td></tr>
+        </table>
+        <p class="note">Pro 혜택: 즐겨찾기 노선 무제한(무료 최대 5개 노선), 상세 통계와 17개 광역시도 히트맵, 공유 카드 워터마크 제거, 방문 스탬프를 A4로 출력하는 PDF 스탬프북. 무료 체험은 제공되지 않습니다. 평생 이용권은 자동 갱신이 없는 일회성 비소모성(non-consumable) 구매입니다. 노선 열람·승차 기록·스탬프북·iCloud 동기화는 무료·Pro 구분 없이 모든 이용자에게 제공됩니다(기기 변경·분실 시에도 기록 보존을 위해 과금 대상에서 제외).</p>
       </div>
       <div class="app-block" data-app="nycsubwaylog">
         <p class="sub-label">구독·구매 상품 (NYC Subway Log Pro)</p>
@@ -330,6 +374,20 @@
       <p>DeskBreath Pro는 Apple App Store를 통한 일회성(비소모성) 인앱 구매입니다. 구독이 아니며 결제·복원·환불은 App Store 정책을 따릅니다. 당사는 결제 정보를 수집하지 않습니다.</p>
       <p class="sub-label">알림</p>
       <p>사용자가 권한을 허용하면 업무 세션 중 설정한 주기로 스트레칭 로컬 알림이 표시됩니다. 알림은 기기 내에서만 처리되며 외부 서버로 전송되지 않습니다.</p>
+    </div>
+
+    <div class="section" data-app="offwork">
+      <h2>Offwork 커뮤니티 운영</h2>
+      <p class="sub-label">무관용 원칙 (Zero Tolerance)</p>
+      <p>당사는 불쾌감을 주는 콘텐츠(욕설·혐오, 괴롭힘, 위협, 음란물, 불법 정보 등)와 악성 사용자 행위를 어떤 경우에도 용인하지 않습니다. 위반이 확인된 콘텐츠는 삭제되며, 위반한 사용자는 사전 통지 없이 서비스 이용이 정지되거나 계정이 제거될 수 있습니다. 이용자는 앱 시작 시 본 약관과 이 원칙에 동의해야 서비스를 이용할 수 있습니다.</p>
+      <p class="sub-label">이용자 콘텐츠와 금지 행위</p>
+      <p>이용자는 게시물·신고에 실명, 회사명, 연락처, 위치, 타인의 개인 정보 또는 개인을 특정할 수 있는 정보를 입력해서는 안 됩니다. 욕설·혐오, 괴롭힘, 위협, 광고·스팸, 불법 행위 조장, 타인의 권리 침해를 위한 이용도 금지됩니다.</p>
+      <p class="sub-label">반응과 게시물</p>
+      <p>각 이용자는 한 게시물에 하나의 객관식 반응만 남길 수 있으며, 다른 선택지로 변경할 수 있습니다. 반응 결과는 개인에 대한 사실 판단이나 전문적인 조언을 뜻하지 않습니다. 이용자는 게시물에 필요한 서비스 운영·검토 범위의 비독점적 이용 권한을 당사에 부여합니다.</p>
+      <p class="sub-label">신고와 조치</p>
+      <p>이용자는 개인 정보 포함, 욕설·혐오, 괴롭힘, 광고·스팸, 기타 사유로 게시물을 신고할 수 있습니다. 당사는 신고 또는 자체 검토에 따라 게시물을 숨기거나 삭제하고, 서비스 이용을 제한할 수 있습니다. 신고자의 정보는 게시자에게 공개하지 않으며, 검토 결과를 개별 통지하지 않을 수 있습니다.</p>
+      <p class="sub-label">계정·데이터 삭제</p>
+      <p>이용자는 앱의 계정 보관 화면에서 계정 및 데이터 삭제를 요청할 수 있습니다. 삭제 처리 전까지 콘텐츠가 즉시 사라지지 않을 수 있으며, 법령 또는 분쟁 대응에 필요한 최소 기록은 예외적으로 보관될 수 있습니다.</p>
     </div>
 
     <div class="section" data-app="honestcamera">
@@ -455,7 +513,7 @@
 
   <!-- English -->
   <div id="lang-en">
-    <p class="meta">Effective: July 7, 2026 &middot; Developer: kkiruk studio &middot; Contact: <span class="email" id="email-en"></span></p>
+    <p class="meta">Effective: July 29, 2026 &middot; Developer: kkiruk studio &middot; Contact: <span class="email" id="email-en"></span></p>
     <p class="intro">These Terms of Service govern your use of the apps operated by kkiruk studio ("we"). By downloading or using our apps, you agree to these terms.</p>
     <p class="tab-label">Filter by app</p>
     <div class="app-tabs">
@@ -466,19 +524,23 @@
       <button data-filter="sidefeed" onclick="filterApp('sidefeed')">Sidefeed</button>
       <button data-filter="talkmemo" onclick="filterApp('talkmemo')">Talk Memo</button>
       <button data-filter="honestcamera" onclick="filterApp('honestcamera')">Honest Camera</button>
+      <button data-filter="cuttogether" onclick="filterApp('cuttogether')">CutTogether</button>
       <button data-filter="findlocal" onclick="filterApp('findlocal')">Local Link</button>
       <button data-filter="palette2048" onclick="filterApp('palette2048')">Palette</button>
       <button data-filter="song2048" onclick="filterApp('song2048')">Song 2048</button>
       <button data-filter="quote2048" onclick="filterApp('quote2048')">Quote 2048</button>
       <button data-filter="tetsulog" onclick="filterApp('tetsulog')">Tetsulog</button>
+      <button data-filter="raillog" onclick="filterApp('raillog')">Raillog</button>
       <button data-filter="nycsubwaylog" onclick="filterApp('nycsubwaylog')">NYC Subway Log</button>
       <button data-filter="everykeep" onclick="filterApp('everykeep')">everykeep</button>
       <button data-filter="salarycharm" onclick="filterApp('salarycharm')">Salary Charm</button>
       <button data-filter="deskbreath" onclick="filterApp('deskbreath')">DeskBreath</button>
+      <button data-filter="offwork" onclick="filterApp('offwork')">Offwork</button>
       <button data-filter="catscute" onclick="filterApp('catscute')">Cats are Cute</button>
       <button data-filter="catspop" onclick="filterApp('catspop')">Cats are Cute: Pop Time!</button>
       <button data-filter="james" onclick="filterApp('james')">James Series</button>
     </div>
+    <div class="scope-banner" data-lang="en"></div>
 
     <div class="section" data-app="all">
       <h2>Services</h2>
@@ -506,6 +568,10 @@
         <p class="sub-label">Honest Camera</p>
         <p>A single-shutter camera app for children ages 3 and up. No mode switches, no gallery, no settings menu — one button to take a photo, and photos save automatically to the Photos library.</p>
       </div>
+      <div class="app-block" data-app="cuttogether">
+        <p class="sub-label">CutTogether</p>
+        <p>An app that cuts the people, pets, and things out of your photos on device and gathers them onto a single scrapbook poster. A one-time CutTogether Pro purchase adds object cut-outs, print-size export, transparent saving, and extra papers and edges.</p>
+      </div>
       <div class="app-block" data-app="findlocal">
         <p class="sub-label">Local Link / 로컬링크</p>
         <p>A travel utility that takes any spelling — phonetic, Romanized, or native script — and routes the search to the right local map app for the destination country (Naver, KakaoMap, Amap, Google, or Apple). Covers 8 countries (Korea, China, Taiwan, Japan, Thailand, Vietnam, Hong Kong, Macau) with ~2,800 pre-registered places, stations, airports, and terminals.</p>
@@ -526,6 +592,10 @@
         <p class="sub-label">Tetsulog (鉄ログ)</p>
         <p>A "norizubu" (乗りつぶし) tracker that visualizes Japan's rail network and lets riders log every station they visit. Ships with ~370 lines and 7,000+ stations covering the 6 JR group companies plus Tokyo Metro, Toei, Hankyu, Hanshin, Keihan, Kintetsu, Nankai, Meitetsu, Nishitetsu and other major operators (37 companies in total). Shows progress as partial-segment coloring on actual track geometry, plus a station stamp book, activity calendar, and 47-prefecture heatmap.</p>
       </div>
+      <div class="app-block" data-app="raillog">
+        <p class="sub-label">Raillog (레일로그)</p>
+        <p>A tracker for visualizing South Korea's railway lines and stations and collecting your ride records. Ships with 17 operators / 55 lines (KORAIL, Seoul Metropolitan Subway, and metropolitan-city subways). Provides partial-section coloring for progress, a station stamp book, full-line completion cards, a rolling-stock catalog, and an activity log / 17-region heatmap.</p>
+      </div>
       <div class="app-block" data-app="nycsubwaylog">
         <p class="sub-label">NYC Subway Log</p>
         <p>A station-bagging tracker for the New York City Subway. Ships with all 25 services and 475 stations from the MTA's public GTFS feed, and lets riders mark each station visited with notes and photos. Progress is drawn as line-coloured segments over real track geometry, alongside a stamp book, line-completion cards, a five-borough heatmap, and a rolling-stock book. This is an independent app and is not affiliated with, endorsed by, or sponsored by the Metropolitan Transportation Authority.</p>
@@ -541,6 +611,10 @@
       <div class="app-block" data-app="deskbreath">
         <p class="sub-label">DeskBreath</p>
         <p>An ambient breathing and stretch reminder that gently nudges you to breathe deeper and move while working (iOS and macOS). It shows a small breathing orb during work sessions and periodic stretch reminders.</p>
+      </div>
+      <div class="app-block" data-app="offwork">
+        <p class="sub-label">Offwork</p>
+        <p>An anonymous community for sharing workplace experiences, where participation is limited to the multiple-choice reactions selected by the author. It provides no free-form comments, direct messages, follows, or public profiles.</p>
       </div>
       <div class="app-block" data-app="catscute">
         <p class="sub-label">Cats are Cute</p>
@@ -558,10 +632,10 @@
 
     <div class="section" data-app="all">
       <h2>Use of Services</h2>
-      <p>Our apps use various revenue models. Some apps (Pinclip, ThanYesterday, Sidefeed, Palette, Song 2048, Quote 2048, Tetsulog) offer free features alongside paid (Pro) features, while others such as Talk Memo and Honest Camera are one-time paid apps where a single purchase unlocks all features. Tetsulog additionally offers a lifetime (one-time payment) unlock alongside its subscriptions. Song 2048's and Quote 2048's Pro are one-time purchases (not subscriptions); Song 2048's free version additionally includes optional user-initiated rewarded ads plus frequency-capped interstitial ads between games. All payments are processed through Apple ID.</p>
+      <p>Our apps use various revenue models. Some apps (Pinclip, ThanYesterday, Sidefeed, Palette, Song 2048, Quote 2048, Tetsulog, Raillog, NYC Subway Log) offer free features alongside paid (Pro) features, while others such as Talk Memo and Honest Camera are one-time paid apps where a single purchase unlocks all features. Tetsulog, Raillog, and NYC Subway Log additionally offer a lifetime (one-time payment) unlock alongside their subscriptions. Song 2048's and Quote 2048's Pro are one-time purchases (not subscriptions); Song 2048's free version additionally includes optional user-initiated rewarded ads plus frequency-capped interstitial ads between games. All payments are processed through Apple ID.</p>
     </div>
 
-    <div class="section" data-app="pinclip thanyesterday sidefeed palette2048 tetsulog">
+    <div class="section" data-app="pinclip thanyesterday sidefeed palette2048 tetsulog raillog nycsubwaylog">
       <h2>Subscriptions and Payment</h2>
       <div class="app-block" data-app="thanyesterday">
         <p class="sub-label">Subscription Plans (ThanYesterday)</p>
@@ -602,7 +676,16 @@
           <tr><td>Yearly</td><td>¥2,400/year (~33% off vs monthly)</td></tr>
           <tr><td>Lifetime (one-time)</td><td>¥4,800</td></tr>
         </table>
-        <p class="note">Pro benefits: unlimited favorites (free plan: up to 5 lines), per-operator progress charts and activity calendar, 47-prefecture heatmap, watermark-free share cards, PDF 御朱印帳 export (coming soon). No free trial is offered. iCloud sync is available to all users (both free and Pro) — visit records are considered essential data that must survive device changes or loss, and are therefore never gated.</p>
+        <p class="note">Pro benefits: unlimited favorites (free plan: up to 5 lines), per-operator progress charts and activity calendar, 47-prefecture heatmap, watermark-free share cards, PDF 御朱印帳 export. No free trial is offered. iCloud sync is available to all users (both free and Pro) — visit records are considered essential data that must survive device changes or loss, and are therefore never gated.</p>
+      </div>
+      <div class="app-block" data-app="raillog">
+        <p class="sub-label">Subscription &amp; Purchase (Raillog Pro)</p>
+        <table>
+          <tr><td>Monthly subscription</td><td>₩1,900/month</td></tr>
+          <tr><td>Yearly subscription</td><td>₩9,900/year (about 57% off the monthly rate)</td></tr>
+          <tr><td>Lifetime unlock</td><td>₩19,000 (one-time)</td></tr>
+        </table>
+        <p class="note">Pro benefits: unlimited favorite lines (free tier allows up to 5), detailed statistics and the 17-region heatmap, watermark removal on share cards, and an A4 PDF stamp book of your station stamps. No free trial is offered. The lifetime unlock is a one-time non-consumable purchase with no auto-renewal. Browsing lines, recording rides, the stamp book, and iCloud sync are available to all users regardless of Pro (excluded from paid features so records survive device changes or loss).</p>
       </div>
       <div class="app-block" data-app="nycsubwaylog">
         <p class="sub-label">Subscription &amp; Purchase (NYC Subway Log Pro)</p>
@@ -718,6 +801,20 @@
       <p>DeskBreath Pro is a one-time (non-consumable) in-app purchase through the Apple App Store. It is not a subscription; payment, restore, and refunds follow App Store policy. We do not collect payment information.</p>
       <p class="sub-label">Notifications</p>
       <p>When you grant permission, stretch local notifications appear at your chosen interval during a work session. They are processed entirely on-device and are never transmitted to external servers.</p>
+    </div>
+
+    <div class="section" data-app="offwork">
+      <h2>Offwork Community Operations</h2>
+      <p class="sub-label">Zero Tolerance</p>
+      <p>We have no tolerance for objectionable content (including abusive or hateful content, harassment, threats, obscene material, and unlawful information) or abusive users. Content confirmed to violate these terms will be removed, and violating users may be suspended or have their accounts removed without prior notice. You must agree to these terms, including this policy, when starting the app in order to use the service.</p>
+      <p class="sub-label">User Content and Prohibited Conduct</p>
+      <p>You must not include real names, employer names, contact details, location, another person's personal information, or other information that can identify a person in a post or report. Abusive or hateful content, harassment, threats, spam, advertising, unlawful conduct, and infringement of another person's rights are prohibited.</p>
+      <p class="sub-label">Reactions and Posts</p>
+      <p>Each user may leave one multiple-choice reaction per post and may change that choice. Reaction results are not factual determinations about a person or professional advice. You grant us a non-exclusive right to use your post only to the extent necessary to operate and review the service.</p>
+      <p class="sub-label">Reports and Actions</p>
+      <p>You may report a post for personal information, abusive or hateful content, harassment, spam, or another reason. Following a report or our own review, we may hide or remove content and restrict use of the service. A reporter's identity is not disclosed to the author, and we may not provide an individual notice of the review outcome.</p>
+      <p class="sub-label">Account and Data Deletion</p>
+      <p>You may request account and data deletion from the Account Storage screen in the app. Content may not disappear immediately while the request is processed. The minimum records needed for legal obligations or dispute handling may be retained as an exception.</p>
     </div>
 
     <div class="section" data-app="honestcamera">
@@ -861,15 +958,46 @@ function showLang(lang) {
 }
 
 function filterApp(app) {
-  document.querySelectorAll('[data-app]').forEach(function(el) {
-    var apps = el.getAttribute('data-app').split(' ');
-    var show = app === 'all' || apps.indexOf('all') !== -1 || apps.indexOf(app) !== -1;
-    el.style.display = show ? '' : 'none';
-  });
-  document.querySelectorAll('.app-tabs button').forEach(function(btn) {
-    btn.classList.toggle('active', btn.dataset.filter === app);
-  });
-}
+    document.querySelectorAll('[data-app]').forEach(function(el) {
+      var apps = el.getAttribute('data-app').split(' ');
+      var show = app === 'all' || apps.indexOf('all') !== -1 || apps.indexOf(app) !== -1;
+      el.style.display = show ? '' : 'none';
+    });
+    document.querySelectorAll('.app-tabs button').forEach(function(btn) {
+      btn.classList.toggle('active', btn.dataset.filter === app);
+    });
+    /* 어떤 앱을 보고 있는지 본문 위에 분명히 알린다. 이게 없으면 '전체'와
+       구분이 안 돼서 다른 앱의 고지를 자기 앱 것으로 읽는다. */
+    document.querySelectorAll('.scope-banner').forEach(function(el) {
+      var lang = el.dataset.lang;
+      if (app === 'all') { el.classList.remove('on'); el.innerHTML = ''; return; }
+      var btn = el.closest('div[id^="lang-"]').querySelector('.app-tabs button[data-filter="' + app + '"]');
+      var name = btn ? btn.textContent : app;
+      el.innerHTML = lang === 'ko'
+        ? '아래 내용은 <b>' + name + '</b> 에만 해당합니다. 다른 앱의 항목은 숨겨져 있습니다.<a href="#" onclick="filterApp(\'all\');return false;">전체 보기</a>'
+        : 'The sections below apply to <b>' + name + '</b> only. Other apps are hidden.<a href="#" onclick="filterApp(\'all\');return false;">Show all</a>';
+      el.classList.add('on');
+    });
+    /* 주소를 바꿔 두면 이 상태 그대로 공유·재방문할 수 있다 */
+    try {
+      var u = new URL(window.location.href);
+      if (app === 'all') u.searchParams.delete('app'); else u.searchParams.set('app', app);
+      history.replaceState(null, '', u);
+    } catch (e) {}
+  }
+
+  /* 앱에서 ?app=<id> 로 들어오면 그 앱만 보여준다.
+     이게 없어서 어느 앱에서 열든 20개 앱 고지가 전부 펼쳐져 있었다. */
+  (function () {
+    var m = /[?&]app=([^&#]+)/.exec(window.location.search);
+    if (!m) return;
+    var app = decodeURIComponent(m[1]);
+    var run = function () {
+      if (document.querySelector('.app-tabs button[data-filter="' + app + '"]')) filterApp(app);
+    };
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+    else run();
+  })();
 </script>
 </body>
 </html>
