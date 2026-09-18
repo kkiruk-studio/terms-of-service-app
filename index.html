@@ -957,7 +957,58 @@ function showLang(lang) {
   });
 }
 
-function filterApp(app) {
+/* ── 기본 상태 = '앱 선택' (2026-09-18) ──────────────────────────
+     예전 기본값은 '전체' 라, 어느 앱에서 들어오든 22개 앱 고지가 한꺼번에
+     펼쳐졌다. 자기 앱과 무관한 항목(음성 녹음·지하철 기록·사진 AI)을 자기 것으로
+     읽는 오해가 실제로 발생했다(1점 리뷰).
+     ⚠️ 공통 조항(data-app="all")은 기본 상태에서도 그대로 보여준다. 이 주소는
+     스토어에 등록된 개인정보처리방침 URL 이므로, 선택 화면만 뜨면 심사에서
+     "정책이 안 보인다"는 지적을 받을 수 있다. 앱별 항목만 접는다. */
+  /* 앱별 행만 있는 표(제3자 서비스 등)는 선택 전에 머리글만 남아 깨져 보인다.
+     보이는 행이 없으면 표를 접고 안내 한 줄로 대체한다. */
+  function syncTables() {
+    document.querySelectorAll('table').forEach(function (tb) {
+      var rows = tb.querySelectorAll('tr[data-app]');
+      if (!rows.length) return;
+      var any = Array.prototype.some.call(rows, function (r) { return r.style.display !== 'none'; });
+      var hint = tb.nextElementSibling;
+      if (!hint || !hint.classList.contains('table-empty')) {
+        hint = document.createElement('p');
+        hint.className = 'table-empty note';
+        var ko = tb.closest('div[id^="lang-"]') && tb.closest('div[id^="lang-"]').id === 'lang-ko';
+        hint.textContent = ko
+          ? '앱을 선택하면 해당 앱에 적용되는 항목이 표시됩니다.'
+          : 'Select an app to see the entries that apply to it.';
+        tb.parentNode.insertBefore(hint, tb.nextSibling);
+      }
+      tb.style.display = any ? '' : 'none';
+      hint.style.display = any ? 'none' : '';
+    });
+  }
+
+  function pickMode() {
+    document.querySelectorAll('[data-app]').forEach(function(el) {
+      var apps = el.getAttribute('data-app').split(' ');
+      el.style.display = apps.indexOf('all') !== -1 ? '' : 'none';
+    });
+    document.querySelectorAll('.app-tabs button').forEach(function(btn) {
+      btn.classList.remove('active');
+    });
+    document.querySelectorAll('.scope-banner').forEach(function(el) {
+      el.innerHTML = el.dataset.lang === 'ko'
+        ? '위에서 <b>앱을 선택</b>하면 그 앱의 항목이 여기에 표시됩니다. 아래 내용은 모든 앱에 공통으로 적용되는 조항입니다.'
+        : 'Pick an <b>app above</b> to see its sections. What follows applies to all apps.';
+      el.classList.add('on');
+    });
+    try {
+      var u = new URL(window.location.href);
+      u.searchParams.delete('app');
+      history.replaceState(null, '', u);
+    } catch (e) {}
+    syncTables();
+  }
+
+  function filterApp(app) {
     document.querySelectorAll('[data-app]').forEach(function(el) {
       var apps = el.getAttribute('data-app').split(' ');
       var show = app === 'all' || apps.indexOf('all') !== -1 || apps.indexOf(app) !== -1;
@@ -984,16 +1035,17 @@ function filterApp(app) {
       if (app === 'all') u.searchParams.delete('app'); else u.searchParams.set('app', app);
       history.replaceState(null, '', u);
     } catch (e) {}
+    syncTables();
   }
 
   /* 앱에서 ?app=<id> 로 들어오면 그 앱만 보여준다.
      이게 없어서 어느 앱에서 열든 20개 앱 고지가 전부 펼쳐져 있었다. */
   (function () {
     var m = /[?&]app=([^&#]+)/.exec(window.location.search);
-    if (!m) return;
-    var app = decodeURIComponent(m[1]);
+    var app = m ? decodeURIComponent(m[1]) : null;
     var run = function () {
-      if (document.querySelector('.app-tabs button[data-filter="' + app + '"]')) filterApp(app);
+      if (app && document.querySelector('.app-tabs button[data-filter="' + app + '"]')) filterApp(app);
+      else pickMode();
     };
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
     else run();
